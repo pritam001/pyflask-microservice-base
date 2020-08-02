@@ -8,6 +8,6 @@ Usage Guide
 ------------------------------------------------------------------------------
 This is a template project hosted on GitHub which can be used to create new repositories.
 
-![GitHub Guide: Creating a repository from a template](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template)
+[GitHub Guide: Creating a repository from a template](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template)
 
 
