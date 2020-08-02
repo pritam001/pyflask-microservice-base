@@ -6,7 +6,8 @@ An "optionally opinionated and structured" flask boilerplate app for ideal devel
 
 Usage Guide
 ------------------------------------------------------------------------------
-A bash file will be used to clone necessary file from this project to your project
+This is a template project hosted on GitHub which can be used to create new repositories.
 
+![GitHub guide: Creating a repository from a template](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template)
 
 
