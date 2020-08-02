@@ -1,0 +1,4 @@
+Flask
+dynaconf
+flask_apispec
+flask_cors
