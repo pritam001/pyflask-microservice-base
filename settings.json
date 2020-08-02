@@ -1,0 +1,77 @@
+{
+    "default": {
+        "DEBUG": true,
+        "PROFILER": {
+            "flask-profiler": true,
+            "line-profiler": true,
+            "line-profiler-type": "deterministic"
+        },
+        "API": {
+            "SERVER": {
+                "url": "0.0.0.0",
+                "port": 8420
+            },
+            "VERSION": "/api/v1/"
+        },
+        "APP_NAME": "pyflask-service",
+        "LOGGING": {
+            "basepath": "logs"
+        },
+        "MONGO": {
+            "uri": "",
+            "db": "",
+            "max_pool_size": 100
+        },
+        "POSTGRES": {
+            "uri": "",
+            "db": ""
+        },
+        "REDIS": {
+            "url": ""
+        }
+    },
+    "development": {
+        "DEBUG": true,
+        "PROFILER": {
+            "flask-profiler": true,
+            "line-profiler": true,
+            "line-profiler-type": "deterministic"
+        },
+        "MONGO": {
+            "uri": "mongodb://localhost:27017/testdb",
+            "db": "testdb",
+            "max_pool_size": 100
+        },
+        "POSTGRES": {
+            "uri": "postgresql://localhost:5432",
+            "db": "testdb"
+        },
+        "REDIS": {
+            "url": "redis://localhost:6379"
+        }
+    },
+    "qa": {
+        "DEBUG": false,
+        "PROFILER": {
+            "flask-profiler": true,
+            "line-profiler": false,
+            "line-profiler-type": ""
+        }
+    },
+    "preprod": {
+        "DEBUG": false,
+        "PROFILER": {
+            "flask-profiler": false,
+            "line-profiler": false,
+            "line-profiler-type": ""
+        }
+    },
+    "production": {
+        "DEBUG": false,
+        "PROFILER": {
+            "flask-profiler": false,
+            "line-profiler": false,
+            "line-profiler-type": ""
+        }
+    }
+}
