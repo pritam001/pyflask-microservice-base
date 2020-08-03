@@ -134,3 +134,7 @@ dmypy.json
 
 # MacOS
 DS_Store
+
+# logs
+logs/
+
