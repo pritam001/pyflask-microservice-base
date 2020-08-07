@@ -6,4 +6,4 @@ log = Logger()
 
 def register_blueprints(app):
     app.register_blueprint(health_blueprint)
-    log.info(f"Registered health blueprint")
+    log.info("Registered health blueprint")

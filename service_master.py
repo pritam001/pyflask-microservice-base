@@ -7,7 +7,7 @@ log = Logger()
 
 
 if __name__ == "__main__":
-    log.info(f"Created app instance. Initiating run . . .")
+    log.info("Created app instance. Initiating run . . .")
     app.run(
         host=settings.API.SERVER.url,
         port=settings.API.SERVER.port,
