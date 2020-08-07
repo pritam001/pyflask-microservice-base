@@ -14,6 +14,15 @@ Usage Guide
 ------------------------------------------------------------------------------
 This is a template project hosted on GitHub which can be used to create new repositories.
 
-[GitHub Guide: Creating a repository from a template](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template)
+Steps for creating boilerplate project in GitHub
+------------------------------------------------------------------------------
+0. Create a new repository named "my-pyflask-project" using this template repository *
+0. `git clone https://www.github.com/username/my-pyflask-project.git`
+0. `cd my-pyflask-project`
+0. Create and activate conda environment `conda activate my-conda-venv` **
+0. `sh base_constructor.sh`
 
+\* [GitHub Guide: Creating a repository from a template](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template)
+<br>
+\** [Guide to Conda environment](https://github.com/pritam001/pyflask-microservice-base/blob/master/documentation/conda.md)
 

@@ -1,6 +1,7 @@
 # Conda documentation
 
 ### 1. Install Pip
+https://www.shellhacks.com/python-install-pip-mac-ubuntu-centos/
 ### 2. Install Anaconda
 ##### Linux
 `wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh`
