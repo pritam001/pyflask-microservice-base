@@ -46,8 +46,10 @@ help:
 lint: #: Run static analysis with black, flake8, pylint, bandit and mypy
 	@echo "$(BOLD_CYAN)Blackifying $(RESET_STYLES)🍳"
 	black $(APP_DIR) $(TEST_DIR) $(HOME_DIR_PY_FILES)
+	@echo "$(BOLD_CYAN)ISorting 〽️$(RESET_STYLES)️"
+	isort --recursive $(APP_DIR) $(TEST_DIR) $(HOME_DIR_PY_FILES)
 	@echo "$(BOLD_CYAN)Flaking️❄️$(RESET_STYLES)"
 	flake8 $(APP_DIR) $(TEST_DIR) $(HOME_DIR_PY_FILES)
-	@echo "$(BOLD_CYAN)Trying to loot️🕵️️$(RESET_STYLES)"
-	bandit -l -i -r .
+	@echo "$(BOLD_CYAN)Securing️🕵️️$(RESET_STYLES)"
+	bandit -l -i -r . --format=custom
 

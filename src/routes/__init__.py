@@ -1,4 +1,5 @@
 from src.core import Logger
+
 from .health import api as health_blueprint
 
 log = Logger()

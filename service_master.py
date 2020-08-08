@@ -9,7 +9,5 @@ log = Logger()
 if __name__ == "__main__":
     log.info("Created app instance. Initiating run . . .")
     app.run(
-        host=settings.API.SERVER.url,
-        port=settings.API.SERVER.port,
-        debug=settings.DEBUG,
+        host=settings.API.SERVER.url, port=settings.API.SERVER.port, debug=settings.DEBUG,
     )

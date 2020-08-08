@@ -4,6 +4,7 @@ import logging
 import os
 import sys
 from logging.handlers import TimedRotatingFileHandler
+
 from dynaconf import settings
 
 from src.core.singleton import Singleton
