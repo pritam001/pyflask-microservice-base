@@ -138,3 +138,5 @@ DS_Store
 # logs
 logs/
 
+# mypy
+.mypy_cache/

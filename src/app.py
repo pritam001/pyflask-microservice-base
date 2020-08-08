@@ -4,9 +4,8 @@ from src.server import Server
 
 log = Logger()
 
-log.info(f"Creating app instance . . .")
+log.info("Creating app instance . . .")
 server = Server()  # Generate singleton instance of server
 app = server.get_app()  # Get Flask app reference from server instance
-log.info(f"Registering blueprints . . .")
+log.info("Registering blueprints . . .")
 register_blueprints(app)  # Register all blueprints to app reference
-

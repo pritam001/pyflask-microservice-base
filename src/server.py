@@ -3,7 +3,7 @@ from flask import Flask
 from flask_apispec import FlaskApiSpec
 from flask_cors import CORS
 
-from src.core import Singleton, Logger
+from src.core import Logger, Singleton
 
 log = Logger()
 
