@@ -1,0 +1,15 @@
+# Add 'test' label
+":label: test :checkered_flag:":
+  - test/**/*
+
+# Add github actions related updates to .github
+":label: github-action :octocat:":
+  - .github/**/*
+
+# requirements.txt update
+":label: requirements-update :christmas_tree:":
+  - requirements/*
+
+":label: documentation :scroll:":
+  - README.md
+  - documentation/*.md
