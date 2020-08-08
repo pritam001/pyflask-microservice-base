@@ -9,12 +9,13 @@ An "optionally opinionated and structured" flask boilerplate microservice for id
 
 Tools
 ------------------------------------------------------------------------------
-[![Min Python Version 3.8+](https://img.shields.io/badge/python-3.8+-3776AB.svg)](https://www.python.org/download/releases/3.8.0/)
-[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
-[![Static Analysis: flake8](https://img.shields.io/badge/static%20analysis-flake8-white.svg)](https://www.python.org/dev/peps/pep-0008/)
-[![Static Typing: mypy](https://img.shields.io/badge/static%20typing-mypy-blue.svg)](https://www.python.org/dev/peps/pep-0008/)
-[![Security: bandit](https://img.shields.io/badge/security-bandit-yellow.svg)](https://github.com/PyCQA/bandit)
-[![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
+[![Min Python Version 3.8+](https://img.shields.io/badge/python-3.8+-3776AB.svg?style=flat-square)](https://www.python.org/download/releases/3.8.0/)
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg?style=flat-square)](https://github.com/psf/black)
+[![Static Analysis: flake8](https://img.shields.io/badge/static%20analysis-flake8-cccccc.svg?style=flat-square)](https://www.python.org/dev/peps/pep-0008/)
+[![Static Typing: mypy](https://img.shields.io/badge/static%20typing-mypy-blue.svg?style=flat-square)](https://www.python.org/dev/peps/pep-0008/)
+[![Security: bandit](https://img.shields.io/badge/security-bandit-yellow.svg?style=flat-square)](https://github.com/PyCQA/bandit)
+[![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?style=flat-square&logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
+
 
 Development Status
 ------------------------------------------------------------------------------
