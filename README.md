@@ -13,9 +13,10 @@ Tools
 ------------------------------------------------------------------------------
 [![Min Python Version 3.8+](https://img.shields.io/badge/python-3.8+-3776AB.svg?style=flat)](https://www.python.org/download/releases/3.8.0/)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg?style=flat)](https://github.com/psf/black)
-[![Static Analysis: flake8](https://img.shields.io/badge/static%20analysis-flake8-cccccc.svg?style=flat)](https://www.python.org/dev/peps/pep-0008/)
+[![Static Analysis: flake8](https://img.shields.io/badge/static%20analysis-flake8-cccccc.svg?style=flat)](https://github.com/PyCQA/flake8/)
+[![Cyclomatic Complexity: radon](https://img.shields.io/badge/cyclomatic%20complexity-radon-ff5252.svg?style=flat)](https://github.com/rubik/radon)
 [![Imports: isort](https://img.shields.io/badge/%20imports-isort-%231674b1?style=flat&labelColor=ef8336)](https://timothycrosley.github.io/isort/)
-[![Static Typing: mypy](https://img.shields.io/badge/static%20typing-mypy-blue.svg?style=flat)](https://www.python.org/dev/peps/pep-0008/)
+[![Static Typing: mypy](https://img.shields.io/badge/static%20typing-mypy-blue.svg?style=flat)](https://github.com/python/mypy/)
 [![Security: bandit](https://img.shields.io/badge/security-bandit-yellow.svg?style=flat)](https://github.com/PyCQA/bandit)
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?style=flat&logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
 
@@ -42,5 +43,5 @@ Linting Guide
 ------------------------------------------------------------------------------
 `make format` : Format and fix python code with black, isort, autoflake
 
-`make lint` : Run static analysis with flake8, mypy and bandit
+`make lint` : Run static analysis with flake8, radon, mypy and bandit
 

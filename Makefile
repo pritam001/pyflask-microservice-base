@@ -35,7 +35,7 @@ FILES = input output
 help:
 	@echo "$(BOLD_BLUE)-----------------------------MAKE GUIDE----------------------------$(RESET_STYLES)"
 	@echo "$(BOLD_CYAN)make setup$(RESET_STYLES) : Setup pyflask-service"
-	@echo "$(BOLD_CYAN)make format$(RESET_STYLES) : Format and fix python code pyflask-service"
+	@echo "$(BOLD_CYAN)make format$(RESET_STYLES) : Format and fix python code in pyflask-service"
 	@echo "$(BOLD_CYAN)make lint$(RESET_STYLES) : Lint pyflask-service"
 	@echo "$(BOLD_CYAN)make test$(RESET_STYLES) : Test pyflask-service"
 	@echo "$(BOLD_CYAN)make debug$(RESET_STYLES) : Debug pyflask-service"
@@ -75,11 +75,14 @@ format: #: Format and fix python code with black, isort, autoflake
 	autoflake --remove-all-unused-imports --remove-unused-variables --remove-duplicate-keys --ignore-init-module-imports -i -r $(APP_DIR) $(TEST_DIR) $(HOME_DIR_PY_FILES)
 
 
-lint: #: Run static analysis with flake8, mypy and bandit
+lint: #: Run static analysis with flake8, radon, mypy and bandit
 	@echo "\n$(BOLD_CYAN)Flake linting$(RESET_STYLES) ❄️"
 	flake8 --version
 	flake8 $(APP_DIR) $(TEST_DIR) $(HOME_DIR_PY_FILES)
-	@echo "\n$(BOLD_CYAN)Static typing$(RESET_STYLES) ⌨️"
+	@echo "\n$(BOLD_CYAN)Checking cyclomatic complexity with Radon$(RESET_STYLES) 💫️"
+	radon --version
+	radon cc $(APP_DIR) $(TEST_DIR) $(HOME_DIR_PY_FILES) --total-average -nc
+	@echo "\n$(BOLD_CYAN)Static typing with mypy$(RESET_STYLES) ⌨️"
 	mypy --version
 	mypy $(APP_DIR) $(HOME_DIR_PY_FILES)
 	@echo "\n$(BOLD_CYAN)Securing with bandit$(RESET_STYLES) 🕵️️"
