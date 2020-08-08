@@ -6,20 +6,19 @@ An "optionally opinionated and structured" flask boilerplate microservice for id
 ![Python](https://img.shields.io/badge/-Python-3776AB?style=flat-square&logo=Python&logoColor=white)
 ![Flask](https://img.shields.io/badge/-Flask-000000?style=flat-square&logo=flask&logoColor=white)
 ![License](https://img.shields.io/github/license/pritam001/pyflask-microservice-base?style=flat-square&label=License)
+![WIP](https://img.shields.io/badge/%20%F0%9F%9A%A7%20-Dev%20in%20progress-important)
+
 
 Tools
 ------------------------------------------------------------------------------
-[![Min Python Version 3.8+](https://img.shields.io/badge/python-3.8+-3776AB.svg?style=flat-square)](https://www.python.org/download/releases/3.8.0/)
-[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg?style=flat-square)](https://github.com/psf/black)
-[![Static Analysis: flake8](https://img.shields.io/badge/static%20analysis-flake8-cccccc.svg?style=flat-square)](https://www.python.org/dev/peps/pep-0008/)
-[![Static Typing: mypy](https://img.shields.io/badge/static%20typing-mypy-blue.svg?style=flat-square)](https://www.python.org/dev/peps/pep-0008/)
-[![Security: bandit](https://img.shields.io/badge/security-bandit-yellow.svg?style=flat-square)](https://github.com/PyCQA/bandit)
-[![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?style=flat-square&logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
+[![Min Python Version 3.8+](https://img.shields.io/badge/python-3.8+-3776AB.svg?style=flat)](https://www.python.org/download/releases/3.8.0/)
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg?style=flat)](https://github.com/psf/black)
+[![Static Analysis: flake8](https://img.shields.io/badge/static%20analysis-flake8-cccccc.svg?style=flat)](https://www.python.org/dev/peps/pep-0008/)
+[![Imports: isort](https://img.shields.io/badge/%20imports-isort-%231674b1?style=flat&labelColor=ef8336)](https://timothycrosley.github.io/isort/)
+[![Static Typing: mypy](https://img.shields.io/badge/static%20typing-mypy-blue.svg?style=flat)](https://www.python.org/dev/peps/pep-0008/)
+[![Security: bandit](https://img.shields.io/badge/security-bandit-yellow.svg?style=flat)](https://github.com/PyCQA/bandit)
+[![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?style=flat&logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
 
-
-Development Status
-------------------------------------------------------------------------------
-![WIP](https://img.shields.io/badge/%20%F0%9F%9A%A7%20-Work%20in%20progress-important)
 
 Usage Guide
 ------------------------------------------------------------------------------
