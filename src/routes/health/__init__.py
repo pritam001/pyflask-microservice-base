@@ -9,4 +9,3 @@ log = Logger()
 def get_health():
     log.info("Request received : ping")
     return {"statusCode": 200}
-
