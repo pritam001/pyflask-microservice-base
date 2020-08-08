@@ -24,3 +24,6 @@ flake8-pytest
 flake8-pytest-style
 flake8-return
 pep8-naming
+
+# A framework for managing and maintaining multi-language pre-commit hooks
+pre-commit

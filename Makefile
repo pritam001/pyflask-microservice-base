@@ -60,6 +60,8 @@ setup: #: Use pip-tools, pip-compile, pip install
 	pip install -r requirements/requirements.txt
 	@echo "$(BOLD_CYAN)Installing dev requirements$(RESET_STYLES)"
 	pip install -r requirements/dev-requirements.txt
+	@echo "$(BOLD_CYAN)Adding pre-commit hooks$(RESET_STYLES)"
+	pre-commit install
 
 
 format: #: Format and fix python code with black, isort, autoflake
@@ -83,4 +85,7 @@ lint: #: Run static analysis with flake8, mypy and bandit
 	@echo "$(BOLD_CYAN)Securing with bandit️🕵️️$(RESET_STYLES)"
 	bandit --version
 	bandit -l -i -r . --format=custom
+	@echo "$(BOLD_CYAN)Running pre-commit hooks 🏁️️️$(RESET_STYLES)"
+	pre-commit run --all-files
+	@echo "$(BOLD_CYAN)All checks passed 🏳️️️️$(RESET_STYLES)"
 

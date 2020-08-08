@@ -14,6 +14,7 @@ Tools
 [![Static Analysis: flake8](https://img.shields.io/badge/static%20analysis-flake8-white.svg)](https://www.python.org/dev/peps/pep-0008/)
 [![Static Typing: mypy](https://img.shields.io/badge/static%20typing-mypy-blue.svg)](https://www.python.org/dev/peps/pep-0008/)
 [![Security: bandit](https://img.shields.io/badge/security-bandit-yellow.svg)](https://github.com/PyCQA/bandit)
+[![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
 
 Development Status
 ------------------------------------------------------------------------------
