@@ -21,7 +21,7 @@ PYTHON = python3
 
 # .PHONY defines parts of the makefile that are not dependant on any specific file
 # This is most often used to store functions
-.PHONY = help setup lint test debug clean
+.PHONY = help setup format lint test debug clean
 
 # Defining an array variable
 FILES = input output
@@ -30,10 +30,12 @@ FILES = input output
 # This target is executed whenever we just type `make`
 .DEFAULT_GOAL = help
 
+
 # The @ makes sure that the command itself isn't echoed in the terminal
 help:
 	@echo "$(BOLD_BLUE)-----------------------------MAKE GUIDE----------------------------$(RESET_STYLES)"
 	@echo "$(BOLD_CYAN)make setup$(RESET_STYLES) : Setup pyflask-service"
+	@echo "$(BOLD_CYAN)make format$(RESET_STYLES) : Format and fix python code pyflask-service"
 	@echo "$(BOLD_CYAN)make lint$(RESET_STYLES) : Lint pyflask-service"
 	@echo "$(BOLD_CYAN)make test$(RESET_STYLES) : Test pyflask-service"
 	@echo "$(BOLD_CYAN)make debug$(RESET_STYLES) : Debug pyflask-service"
@@ -43,13 +45,39 @@ help:
 	@echo "$(BOLD_BLUE)-------------------------------------------------------------------$(RESET_STYLES)"
 
 
-lint: #: Run static analysis with black, flake8, pylint, bandit and mypy
+setup: #: Use pip-tools, pip-compile, pip install
+	@echo "$(BOLD_CYAN)Setting up pyflask base$(RESET_STYLES)"
+	# Check for venv, conda else exit
+	@echo "$(BOLD_CYAN)Installing pip-tools . . .$(RESET_STYLES)"
+	pip install pip-tools
+	@echo "$(BOLD_CYAN)Generating requirements$(RESET_STYLES)"
+	pip-compile -q --build-isolation --output-file=requirements/requirements.txt requirements/requirements.in
+	@echo "$(BOLD_CYAN)Generating dev requirements$(RESET_STYLES)"
+	pip-compile -q --build-isolation --output-file=requirements/dev-requirements.txt requirements/dev-requirements.in
+	@echo "$(BOLD_CYAN)Syncing requirements$(RESET_STYLES)"
+	pip-sync -q requirements/requirements.txt requirements/dev-requirements.txt
+	@echo "$(BOLD_CYAN)Installing requirements$(RESET_STYLES)"
+	pip install -r requirements/requirements.txt
+	@echo "$(BOLD_CYAN)Installing dev requirements$(RESET_STYLES)"
+	pip install -r requirements/dev-requirements.txt
+
+
+format: #: Format and fix python code with black, isort, autoflake
 	@echo "$(BOLD_CYAN)Blackifying $(RESET_STYLES)🍳"
+	black --version
 	black $(APP_DIR) $(TEST_DIR) $(HOME_DIR_PY_FILES)
 	@echo "$(BOLD_CYAN)ISorting 〽️$(RESET_STYLES)️"
 	isort --recursive $(APP_DIR) $(TEST_DIR) $(HOME_DIR_PY_FILES)
 	@echo "$(BOLD_CYAN)Flaking️❄️$(RESET_STYLES)"
+	flake8 --version
+	autoflake --remove-all-unused-imports --remove-unused-variables --remove-duplicate-keys --ignore-init-module-imports -i -r $(APP_DIR) $(TEST_DIR) $(HOME_DIR_PY_FILES)
+
+
+lint: #: Run static analysis with flake8, bandit and mypy
+	@echo "$(BOLD_CYAN)Flake linting ❄️$(RESET_STYLES)"
+	flake8 --version
 	flake8 $(APP_DIR) $(TEST_DIR) $(HOME_DIR_PY_FILES)
-	@echo "$(BOLD_CYAN)Securing️🕵️️$(RESET_STYLES)"
+	@echo "$(BOLD_CYAN)Securing with bandit️🕵️️$(RESET_STYLES)"
+	bandit --version
 	bandit -l -i -r . --format=custom
 
