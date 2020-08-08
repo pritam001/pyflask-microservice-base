@@ -73,10 +73,13 @@ format: #: Format and fix python code with black, isort, autoflake
 	autoflake --remove-all-unused-imports --remove-unused-variables --remove-duplicate-keys --ignore-init-module-imports -i -r $(APP_DIR) $(TEST_DIR) $(HOME_DIR_PY_FILES)
 
 
-lint: #: Run static analysis with flake8, bandit and mypy
+lint: #: Run static analysis with flake8, mypy and bandit
 	@echo "$(BOLD_CYAN)Flake linting ❄️$(RESET_STYLES)"
 	flake8 --version
 	flake8 $(APP_DIR) $(TEST_DIR) $(HOME_DIR_PY_FILES)
+	@echo "$(BOLD_CYAN)Static typing️️$(RESET_STYLES)⌨️"
+	mypy --version
+	mypy $(APP_DIR) $(HOME_DIR_PY_FILES)
 	@echo "$(BOLD_CYAN)Securing with bandit️🕵️️$(RESET_STYLES)"
 	bandit --version
 	bandit -l -i -r . --format=custom

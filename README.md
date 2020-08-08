@@ -11,8 +11,9 @@ Tools
 ------------------------------------------------------------------------------
 [![Min Python Version 3.6+](https://img.shields.io/badge/python-3.6+-3776AB.svg)](https://www.python.org/download/releases/3.6.0/)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
-[![PEP8](https://img.shields.io/badge/code%20style-pep8-orange.svg)](https://www.python.org/dev/peps/pep-0008/)
-[![security: bandit](https://img.shields.io/badge/security-bandit-yellow.svg)](https://github.com/PyCQA/bandit)
+[![Static Analysis: flake8](https://img.shields.io/badge/static%20analysis-flake8-white.svg)](https://www.python.org/dev/peps/pep-0008/)
+[![Static Typing: mypy](https://img.shields.io/badge/static%20typing-mypy-blue.svg)](https://www.python.org/dev/peps/pep-0008/)
+[![Security: bandit](https://img.shields.io/badge/security-bandit-yellow.svg)](https://github.com/PyCQA/bandit)
 
 Development Status
 ------------------------------------------------------------------------------
@@ -40,4 +41,5 @@ Linting Guide
 ------------------------------------------------------------------------------
 `make format` : Format and fix python code with black, isort, autoflake
 
-`make lint` : Run static analysis with flake8, bandit and mypy
+`make lint` : Run static analysis with flake8, mypy and bandit
+
