@@ -1,6 +1,6 @@
 pyflask-microservice-base
 ------------------------------------------------------------------------------
-An "optionally opinionated and structured" flask boilerplate microservice for ideal development
+An "optionally opinionated and structured" flask boilerplate microservice for jump-starting development
 
 ![Built with](https://img.shields.io/badge/-Built%20with-073551?style=flat-square)
 ![Python](https://img.shields.io/badge/-Python-3776AB?style=flat-square&logo=Python&logoColor=white)
@@ -38,11 +38,19 @@ Steps for creating boilerplate project in GitHub
 \** [Guide to Conda environment](https://github.com/pritam001/pyflask-microservice-base/blob/master/documentation/conda.md)
 
 
+Make Guide
+------------------------------------------------------------------------------
+Type `make help` for available commands
+
+<p align="center"><img src="documentation/assets/make-help-min.gif" /></p>
+
 
 Linting Guide
 ------------------------------------------------------------------------------
 `make format` : Format and fix python code with black, isort, autoflake
 
+<p align="center"><img src="documentation/assets/make-format-min.gif" /></p>
+
 `make lint` : Run static analysis with flake8, radon, mypy and bandit
 
-<p align="center"><img src="documentation/assets/render_lint-v2.gif" /></p>
+<p align="center"><img src="documentation/assets/make-lint-min.gif" /></p>
