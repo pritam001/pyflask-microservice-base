@@ -10,6 +10,8 @@ isort
 mypy
 # Security oriented static analyser for python code
 bandit
+# Complexity analysis
+radon
 
 # Flake8
 flake8
