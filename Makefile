@@ -35,7 +35,7 @@ FILES = input output
 help:
 	@echo "$(BOLD_BLUE)-----------------------------MAKE GUIDE----------------------------$(RESET_STYLES)"
 	@echo "$(BOLD_CYAN)make setup$(RESET_STYLES) : Setup pyflask-service"
-	@echo "$(BOLD_CYAN)make format$(RESET_STYLES) : Format and fix python code pyflask-service"
+	@echo "$(BOLD_CYAN)make format$(RESET_STYLES) : Format and fix python code in pyflask-service"
 	@echo "$(BOLD_CYAN)make lint$(RESET_STYLES) : Lint pyflask-service"
 	@echo "$(BOLD_CYAN)make test$(RESET_STYLES) : Test pyflask-service"
 	@echo "$(BOLD_CYAN)make debug$(RESET_STYLES) : Debug pyflask-service"
@@ -46,46 +46,49 @@ help:
 
 
 setup: #: Use pip-tools, pip-compile, pip install
-	@echo "$(BOLD_CYAN)Setting up pyflask base$(RESET_STYLES)"
+	@echo "\n$(BOLD_CYAN)Setting up pyflask base$(RESET_STYLES)"
 	# Check for venv, conda else exit
-	@echo "$(BOLD_CYAN)Installing pip-tools . . .$(RESET_STYLES)"
+	@echo "\n$(BOLD_CYAN)Installing pip-tools . . .$(RESET_STYLES)"
 	pip install pip-tools
-	@echo "$(BOLD_CYAN)Generating requirements$(RESET_STYLES)"
+	@echo "\n$(BOLD_CYAN)Generating requirements$(RESET_STYLES)"
 	pip-compile -q --build-isolation --output-file=requirements/requirements.txt requirements/requirements.in
-	@echo "$(BOLD_CYAN)Generating dev requirements$(RESET_STYLES)"
+	@echo "\n$(BOLD_CYAN)Generating dev requirements$(RESET_STYLES)"
 	pip-compile -q --build-isolation --output-file=requirements/dev-requirements.txt requirements/dev-requirements.in
-	@echo "$(BOLD_CYAN)Syncing requirements$(RESET_STYLES)"
+	@echo "\n$(BOLD_CYAN)Syncing requirements$(RESET_STYLES)"
 	pip-sync -q requirements/requirements.txt requirements/dev-requirements.txt
-	@echo "$(BOLD_CYAN)Installing requirements$(RESET_STYLES)"
+	@echo "\n$(BOLD_CYAN)Installing requirements$(RESET_STYLES)"
 	pip install -r requirements/requirements.txt
-	@echo "$(BOLD_CYAN)Installing dev requirements$(RESET_STYLES)"
+	@echo "\n$(BOLD_CYAN)Installing dev requirements$(RESET_STYLES)"
 	pip install -r requirements/dev-requirements.txt
-	@echo "$(BOLD_CYAN)Adding pre-commit hooks$(RESET_STYLES)"
+	@echo "\n$(BOLD_CYAN)Adding pre-commit hooks$(RESET_STYLES)"
 	pre-commit install
 
 
 format: #: Format and fix python code with black, isort, autoflake
-	@echo "$(BOLD_CYAN)Blackifying $(RESET_STYLES)🍳"
+	@echo "\n$(BOLD_CYAN)Blackifying$(RESET_STYLES) 🍳"
 	black --version
 	black $(APP_DIR) $(TEST_DIR) $(HOME_DIR_PY_FILES)
-	@echo "$(BOLD_CYAN)ISorting 〽️$(RESET_STYLES)️"
+	@echo "\n$(BOLD_CYAN)ISorting$(RESET_STYLES) 〽️️"
 	isort --recursive $(APP_DIR) $(TEST_DIR) $(HOME_DIR_PY_FILES)
-	@echo "$(BOLD_CYAN)Flaking️❄️$(RESET_STYLES)"
+	@echo "\n$(BOLD_CYAN)Flaking$(RESET_STYLES) ❄️"
 	flake8 --version
 	autoflake --remove-all-unused-imports --remove-unused-variables --remove-duplicate-keys --ignore-init-module-imports -i -r $(APP_DIR) $(TEST_DIR) $(HOME_DIR_PY_FILES)
 
 
-lint: #: Run static analysis with flake8, mypy and bandit
-	@echo "$(BOLD_CYAN)Flake linting ❄️$(RESET_STYLES)"
+lint: #: Run static analysis with flake8, radon, mypy and bandit
+	@echo "\n$(BOLD_CYAN)Linting with flake8$(RESET_STYLES) ❄️"
 	flake8 --version
 	flake8 $(APP_DIR) $(TEST_DIR) $(HOME_DIR_PY_FILES)
-	@echo "$(BOLD_CYAN)Static typing️️$(RESET_STYLES)⌨️"
+	@echo "\n$(BOLD_CYAN)Checking cyclomatic complexity with radon$(RESET_STYLES) 💫️"
+	radon --version
+	radon cc $(APP_DIR) $(TEST_DIR) $(HOME_DIR_PY_FILES) --total-average -nc
+	@echo "\n$(BOLD_CYAN)Static typing with mypy$(RESET_STYLES) ⌨️"
 	mypy --version
 	mypy $(APP_DIR) $(HOME_DIR_PY_FILES)
-	@echo "$(BOLD_CYAN)Securing with bandit️🕵️️$(RESET_STYLES)"
+	@echo "\n$(BOLD_CYAN)Securing with bandit$(RESET_STYLES) 🕵️️"
 	bandit --version
 	bandit -l -i -r . --format=custom
-	@echo "$(BOLD_CYAN)Running pre-commit hooks 🏁️️️$(RESET_STYLES)"
+	@echo "\n$(BOLD_CYAN)Running pre-commit hooks$(RESET_STYLES) 🏁️️️"
 	pre-commit run --all-files
-	@echo "$(BOLD_CYAN)All checks passed 🏳️️️️$(RESET_STYLES)"
+	@echo "\n$(BOLD_CYAN)All checks passed$(RESET_STYLES) 🏳️️️️"
 
