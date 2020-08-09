@@ -28,11 +28,11 @@ This is a template project hosted on GitHub which can be used to create new repo
 
 Steps for creating boilerplate project in GitHub
 ------------------------------------------------------------------------------
-0. Create a new repository named "my-pyflask-project" using this template repository *
-0. `git clone https://www.github.com/username/my-pyflask-project.git`
-0. `cd my-pyflask-project`
-0. Create and activate conda environment `conda activate my-conda-venv` **
-0. `make setup` : Use pip-tools, pip-compile, pip install to setup python packages
+1. Create a new repository named "my-pyflask-project" using this template repository *
+1. `git clone https://www.github.com/username/my-pyflask-project.git`
+1. `cd my-pyflask-project`
+1. Create and activate conda environment `conda activate my-conda-venv` **
+1. `make setup` : Use pip-tools, pip-compile, pip install to setup python packages
 
 \* [GitHub Guide: Creating a repository from a template](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template)
 <br>
@@ -57,8 +57,29 @@ Linting Guide
 <p align="center"><img src="documentation/assets/make-lint.gif" /></p>
 
 
+Development Guide
+------------------------------------------------------------------------------
+To be updated
+
+
 Contributing
 ------------------------------------------------------------------------------
-[![](https://sourcerer.io/fame/pritam001/pritam001/pyflask-microservice-base/images/0)](https://sourcerer.io/fame/pritam001/pritam001/pyflask-microservice-base/links/0)[![](https://sourcerer.io/fame/pritam001/pritam001/pyflask-microservice-base/images/1)](https://sourcerer.io/fame/pritam001/pritam001/pyflask-microservice-base/links/1)[![](https://sourcerer.io/fame/pritam001/pritam001/pyflask-microservice-base/images/2)](https://sourcerer.io/fame/pritam001/pritam001/pyflask-microservice-base/links/2)[![](https://sourcerer.io/fame/pritam001/pritam001/pyflask-microservice-base/images/3)](https://sourcerer.io/fame/pritam001/pritam001/pyflask-microservice-base/links/3)[![](https://sourcerer.io/fame/pritam001/pritam001/pyflask-microservice-base/images/4)](https://sourcerer.io/fame/pritam001/pritam001/pyflask-microservice-base/links/4)[![](https://sourcerer.io/fame/pritam001/pritam001/pyflask-microservice-base/images/5)](https://sourcerer.io/fame/pritam001/pritam001/pyflask-microservice-base/links/5)[![](https://sourcerer.io/fame/pritam001/pritam001/pyflask-microservice-base/images/6)](https://sourcerer.io/fame/pritam001/pritam001/pyflask-microservice-base/links/6)[![](https://sourcerer.io/fame/pritam001/pritam001/pyflask-microservice-base/images/7)](https://sourcerer.io/fame/pritam001/pritam001/pyflask-microservice-base/links/7)
+[![](https://sourcerer.io/fame/pritam001/pritam001/pyflask-microservice-base/images/0)](https://sourcerer.io/fame/pritam001/pritam001/pyflask-microservice-base/links/0)
+[![](https://sourcerer.io/fame/pritam001/pritam001/pyflask-microservice-base/images/1)](https://sourcerer.io/fame/pritam001/pritam001/pyflask-microservice-base/links/1)
+[![](https://sourcerer.io/fame/pritam001/pritam001/pyflask-microservice-base/images/2)](https://sourcerer.io/fame/pritam001/pritam001/pyflask-microservice-base/links/2)
+[![](https://sourcerer.io/fame/pritam001/pritam001/pyflask-microservice-base/images/3)](https://sourcerer.io/fame/pritam001/pritam001/pyflask-microservice-base/links/3)
+[![](https://sourcerer.io/fame/pritam001/pritam001/pyflask-microservice-base/images/4)](https://sourcerer.io/fame/pritam001/pritam001/pyflask-microservice-base/links/4)
+[![](https://sourcerer.io/fame/pritam001/pritam001/pyflask-microservice-base/images/5)](https://sourcerer.io/fame/pritam001/pritam001/pyflask-microservice-base/links/5)
+[![](https://sourcerer.io/fame/pritam001/pritam001/pyflask-microservice-base/images/6)](https://sourcerer.io/fame/pritam001/pritam001/pyflask-microservice-base/links/6)
+[![](https://sourcerer.io/fame/pritam001/pritam001/pyflask-microservice-base/images/7)](https://sourcerer.io/fame/pritam001/pritam001/pyflask-microservice-base/links/7)
 
+
+TODO
+-----------------------------------------------------------------------------
+- [x] Swagger support
+- [ ] Update linting documentation
+- [ ] Introduction of testing tools
+- [ ] Testing tools documentation
+- [ ] Version handling by tbump
+- [ ] Add CoC, Contribution guidelines, PR and issue 
 
