@@ -54,3 +54,10 @@ Linting Guide
 `make lint` : Run static analysis with flake8, radon, mypy and bandit
 
 <p align="center"><img src="documentation/assets/make-lint.gif" /></p>
+
+
+Contributing
+------------------------------------------------------------------------------
+[![](https://sourcerer.io/fame/pritam001/pritam001/pyflask-microservice-base/images/0)](https://sourcerer.io/fame/pritam001/pritam001/pyflask-microservice-base/links/0)[![](https://sourcerer.io/fame/pritam001/pritam001/pyflask-microservice-base/images/1)](https://sourcerer.io/fame/pritam001/pritam001/pyflask-microservice-base/links/1)[![](https://sourcerer.io/fame/pritam001/pritam001/pyflask-microservice-base/images/2)](https://sourcerer.io/fame/pritam001/pritam001/pyflask-microservice-base/links/2)[![](https://sourcerer.io/fame/pritam001/pritam001/pyflask-microservice-base/images/3)](https://sourcerer.io/fame/pritam001/pritam001/pyflask-microservice-base/links/3)[![](https://sourcerer.io/fame/pritam001/pritam001/pyflask-microservice-base/images/4)](https://sourcerer.io/fame/pritam001/pritam001/pyflask-microservice-base/links/4)[![](https://sourcerer.io/fame/pritam001/pritam001/pyflask-microservice-base/images/5)](https://sourcerer.io/fame/pritam001/pritam001/pyflask-microservice-base/links/5)[![](https://sourcerer.io/fame/pritam001/pritam001/pyflask-microservice-base/images/6)](https://sourcerer.io/fame/pritam001/pritam001/pyflask-microservice-base/links/6)[![](https://sourcerer.io/fame/pritam001/pritam001/pyflask-microservice-base/images/7)](https://sourcerer.io/fame/pritam001/pritam001/pyflask-microservice-base/links/7)
+
+
