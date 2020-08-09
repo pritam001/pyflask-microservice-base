@@ -42,15 +42,15 @@ Make Guide
 ------------------------------------------------------------------------------
 Type `make help` for available commands
 
-<p align="center"><img src="documentation/assets/make-help-min.gif" /></p>
+<p align="center"><img src="documentation/assets/make-help.gif" /></p>
 
 
 Linting Guide
 ------------------------------------------------------------------------------
 `make format` : Format and fix python code with black, isort, autoflake
 
-<p align="center"><img src="documentation/assets/make-format-min.gif" /></p>
+<p align="center"><img src="documentation/assets/make-format.gif" /></p>
 
 `make lint` : Run static analysis with flake8, radon, mypy and bandit
 
-<p align="center"><img src="documentation/assets/make-lint-min.gif" /></p>
+<p align="center"><img src="documentation/assets/make-lint.gif" /></p>
