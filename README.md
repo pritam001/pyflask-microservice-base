@@ -45,3 +45,4 @@ Linting Guide
 
 `make lint` : Run static analysis with flake8, radon, mypy and bandit
 
+<p align="center"><img src="documentation/assets/render_lint-v2.gif" /></p>

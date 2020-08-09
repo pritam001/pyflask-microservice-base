@@ -76,10 +76,10 @@ format: #: Format and fix python code with black, isort, autoflake
 
 
 lint: #: Run static analysis with flake8, radon, mypy and bandit
-	@echo "\n$(BOLD_CYAN)Flake linting$(RESET_STYLES) ❄️"
+	@echo "\n$(BOLD_CYAN)Linting with flake8$(RESET_STYLES) ❄️"
 	flake8 --version
 	flake8 $(APP_DIR) $(TEST_DIR) $(HOME_DIR_PY_FILES)
-	@echo "\n$(BOLD_CYAN)Checking cyclomatic complexity with Radon$(RESET_STYLES) 💫️"
+	@echo "\n$(BOLD_CYAN)Checking cyclomatic complexity with radon$(RESET_STYLES) 💫️"
 	radon --version
 	radon cc $(APP_DIR) $(TEST_DIR) $(HOME_DIR_PY_FILES) --total-average -nc
 	@echo "\n$(BOLD_CYAN)Static typing with mypy$(RESET_STYLES) ⌨️"
