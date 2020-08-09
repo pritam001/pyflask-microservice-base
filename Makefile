@@ -62,6 +62,7 @@ setup: #: Use pip-tools, pip-compile, pip install
 	pip install -r requirements/dev-requirements.txt
 	@echo "\n$(BOLD_CYAN)Adding pre-commit hooks$(RESET_STYLES)"
 	pre-commit install
+	@echo "\n"
 
 
 format: #: Format and fix python code with black, isort, autoflake
@@ -73,6 +74,7 @@ format: #: Format and fix python code with black, isort, autoflake
 	@echo "\n$(BOLD_CYAN)Flaking$(RESET_STYLES) ❄️"
 	flake8 --version
 	autoflake --remove-all-unused-imports --remove-unused-variables --remove-duplicate-keys --ignore-init-module-imports -i -r $(APP_DIR) $(TEST_DIR) $(HOME_DIR_PY_FILES)
+	@echo "\n"
 
 
 lint: #: Run static analysis with flake8, radon, mypy and bandit
@@ -91,4 +93,5 @@ lint: #: Run static analysis with flake8, radon, mypy and bandit
 	@echo "\n$(BOLD_CYAN)Running pre-commit hooks$(RESET_STYLES) 🏁️️️"
 	pre-commit run --all-files
 	@echo "\n$(BOLD_CYAN)All checks passed$(RESET_STYLES) 🏳️️️️"
+	@echo "\n"
 

@@ -25,6 +25,7 @@ Usage Guide
 ------------------------------------------------------------------------------
 This is a template project hosted on GitHub which can be used to create new repositories.
 
+
 Steps for creating boilerplate project in GitHub
 ------------------------------------------------------------------------------
 0. Create a new repository named "my-pyflask-project" using this template repository *
