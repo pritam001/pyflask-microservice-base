@@ -26,8 +26,7 @@ Usage Guide
 This is a template project hosted on GitHub which can be used to create new repositories.
 
 
-Steps for creating boilerplate project in GitHub
-------------------------------------------------------------------------------
+### Steps for creating boilerplate project in GitHub
 1. Create a new repository named "my-pyflask-project" using this template repository *
 1. `git clone https://www.github.com/username/my-pyflask-project.git`
 1. `cd my-pyflask-project`
@@ -39,15 +38,13 @@ Steps for creating boilerplate project in GitHub
 \** [Guide to Conda environment](https://github.com/pritam001/pyflask-microservice-base/blob/master/documentation/conda.md)
 
 
-Make Guide
-------------------------------------------------------------------------------
+### Make Guide
 Type `make help` for available commands
 
 <p align="center"><img src="documentation/assets/make-help.gif" /></p>
 
 
-Linting Guide
-------------------------------------------------------------------------------
+### Linting Guide
 `make format` : Format and fix python code with black, isort, autoflake
 
 <p align="center"><img src="documentation/assets/make-format.gif" /></p>
@@ -57,7 +54,7 @@ Linting Guide
 <p align="center"><img src="documentation/assets/make-lint.gif" /></p>
 
 
-Development Guide
+Development Setup
 ------------------------------------------------------------------------------
 To be updated
 

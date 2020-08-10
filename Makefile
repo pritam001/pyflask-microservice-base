@@ -62,7 +62,6 @@ setup: #: Use pip-tools, pip-compile, pip install
 	pip install -r requirements/dev-requirements.txt
 	@echo "\n$(BOLD_CYAN)Adding pre-commit hooks$(RESET_STYLES)"
 	pre-commit install
-	@echo "\n"
 
 
 format: #: Format and fix python code with black, isort, autoflake
