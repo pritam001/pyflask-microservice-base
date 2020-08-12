@@ -1,0 +1,13 @@
+This is the health API for the service
+Call this api to check if service is up.
+---
+responses:
+  200:
+    description: Health status of the service
+    schema:
+      id: health
+      properties:
+        status:
+          type: string
+          description: Service status
+          default: UP

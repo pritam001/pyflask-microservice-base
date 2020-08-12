@@ -3,7 +3,7 @@ from flasgger import Swagger
 from flask import Flask
 from flask_cors import CORS
 
-from src.config.flasgger import fetch_flasgger_template
+from src.config.flasgger import fetch_flasgger_config, fetch_flasgger_template
 from src.core import Logger, Singleton
 
 log = Logger()
@@ -16,7 +16,7 @@ class Server(metaclass=Singleton):
             log.info(f"Starting {settings.APP_NAME} server on {settings.API.SERVER}")
         CORS(app)
         self.app = app
-        self.docs = Swagger(app, template=fetch_flasgger_template(app))
+        self.docs = Swagger(app, template=fetch_flasgger_template(app), config=fetch_flasgger_config())
 
     def get_app(self):
         return self.app

@@ -1,3 +1,7 @@
+from typing import Dict
+
+from flasgger import swag_from
+
 from src.core import Logger, Namespace
 
 Client = Namespace("health")
@@ -6,6 +10,7 @@ log = Logger()
 
 
 @api.route("/ping", methods=["GET"])
-def get_health():
+@swag_from("specs/health.yml")
+def get_health() -> Dict[str, str]:
     log.info("Request received : ping")
-    return {"statusCode": 200}
+    return {"status": "UP"}
