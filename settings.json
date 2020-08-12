@@ -1,6 +1,7 @@
 {
     "default": {
         "DEBUG": true,
+        "VERSION": "0.0.1",
         "PROFILER": {
             "flask-profiler": true,
             "line-profiler": true,

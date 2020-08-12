@@ -141,3 +141,6 @@ logs/
 
 # mypy
 .mypy_cache/
+
+# terminalizer
+config.yml
