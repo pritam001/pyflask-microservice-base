@@ -19,6 +19,7 @@ Tools
 [![Static Typing: mypy](https://img.shields.io/badge/static%20typing-mypy-blue.svg?style=flat)](https://github.com/python/mypy/)
 [![Security: bandit](https://img.shields.io/badge/security-bandit-yellow.svg?style=flat)](https://github.com/PyCQA/bandit)
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?style=flat&logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
+[![API Specs](https://img.shields.io/badge/specs-flasgger-6D9A00?style=flat&logo=swagger&logoColor=white)](https://github.com/pre-commit/pre-commit)
 
 
 Usage Guide
@@ -52,6 +53,16 @@ Type `make help` for available commands
 `make lint` : Run static analysis with flake8, radon, mypy and bandit
 
 <p align="center"><img src="documentation/assets/make-lint.gif" /></p>
+
+
+### Documentation
+Flasgger docs can be found at http://0.0.0.0:8420/api/v1/pyflask-service/swagger
+
+API specs can be found at http://0.0.0.0:8420/api/v1/pyflask-service/swagger_spec
+
+Flasgger UI version: v2 | OpenAPI version: 2
+
+<p align="center"><img src="documentation/assets/flasgger_intro.png" /></p>
 
 
 Development Setup
