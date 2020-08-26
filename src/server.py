@@ -11,15 +11,15 @@ log = Logger()
 
 class Server(metaclass=Singleton):
     def __init__(self):
-        app = Flask(__name__)
+        app: Flask = Flask(__name__)
         with app.app_context():
             log.info(f"Starting {settings.APP_NAME} server on {settings.API.SERVER}")
         CORS(app)
-        self.app = app
-        self.docs = Swagger(app, template=fetch_flasgger_template(app), config=fetch_flasgger_config())
+        self.app: Flask = app
+        self.docs: Swagger = Swagger(app, template=fetch_flasgger_template(app), config=fetch_flasgger_config())
 
-    def get_app(self):
+    def get_app(self) -> Flask:
         return self.app
 
-    def get_docs(self):
+    def get_docs(self) -> Swagger:
         return self.docs
