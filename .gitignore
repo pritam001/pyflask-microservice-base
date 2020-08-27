@@ -138,9 +138,7 @@ DS_Store
 
 # logs
 logs/
-
-# mypy
-.mypy_cache/
+**/logs/
 
 # terminalizer
 config.yml

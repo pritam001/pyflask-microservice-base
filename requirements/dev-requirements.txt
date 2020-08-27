@@ -6,13 +6,14 @@
 #
 appdirs==1.4.4            # via black, virtualenv
 astroid==2.4.2            # via pylint
-attrs==19.3.0             # via black, flake8-eradicate
+attrs==19.3.0             # via black, flake8-eradicate, pytest
 autoflake==1.3.1          # via -r requirements/dev-requirements.in
 bandit==1.6.2             # via -r requirements/dev-requirements.in
 black==19.10b0            # via -r requirements/dev-requirements.in
 cfgv==3.2.0               # via pre-commit
 click==7.1.2              # via black
 colorama==0.4.3           # via radon
+coverage==5.2.1           # via pytest-cov
 distlib==0.3.1            # via virtualenv
 eradicate==1.0            # via flake8-eradicate
 filelock==3.0.12          # via virtualenv
@@ -34,28 +35,36 @@ future==0.18.2            # via radon
 gitdb==4.0.5              # via gitpython
 gitpython==3.1.7          # via bandit
 identify==1.4.25          # via pre-commit
+iniconfig==1.0.1          # via pytest
 isort==4.3.21             # via -r requirements/dev-requirements.in, pylint
 lazy-object-proxy==1.4.3  # via astroid
 mando==0.6.4              # via radon
 mccabe==0.6.1             # via flake8, pylint
+more-itertools==8.4.0     # via pytest
 mypy-extensions==0.4.3    # via mypy
 mypy==0.782               # via -r requirements/dev-requirements.in
 nodeenv==1.4.0            # via pre-commit
+packaging==20.4           # via pytest
 pathspec==0.8.0           # via black
 pbr==5.4.5                # via stevedore
 pep8-naming==0.11.1       # via -r requirements/dev-requirements.in
+pluggy==0.13.1            # via pytest
 pre-commit==2.6.0         # via -r requirements/dev-requirements.in
+py==1.9.0                 # via pytest
 pycodestyle==2.6.0        # via flake8, flake8-print
 pyflakes==2.2.0           # via autoflake, flake8
 pylint==2.5.3             # via -r requirements/dev-requirements.in
+pyparsing==2.4.7          # via packaging
+pytest-cov==2.10.1        # via -r requirements/dev-requirements.in
+pytest==6.0.1             # via -r requirements/dev-requirements.in, pytest-cov
 pyyaml==5.3.1             # via bandit, pre-commit
 r2c-py-ast==0.1.0b1       # via flake8-flask
 radon==4.2.0              # via -r requirements/dev-requirements.in
 regex==2020.7.14          # via black
-six==1.15.0               # via astroid, bandit, flake8-print, mando, virtualenv
+six==1.15.0               # via astroid, bandit, flake8-print, mando, packaging, virtualenv
 smmap==3.0.4              # via gitdb
 stevedore==3.2.0          # via bandit
-toml==0.10.1              # via black, pre-commit, pylint
+toml==0.10.1              # via black, pre-commit, pylint, pytest
 typed-ast==1.4.1          # via black, mypy
 typing-extensions==3.7.4.2  # via mypy
 virtualenv==20.0.30       # via pre-commit
