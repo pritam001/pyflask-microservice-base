@@ -13,6 +13,7 @@ black==19.10b0            # via -r requirements/dev-requirements.in
 cfgv==3.2.0               # via pre-commit
 click==7.1.2              # via black
 colorama==0.4.3           # via radon
+coverage==5.2.1           # via pytest-cov
 distlib==0.3.1            # via virtualenv
 eradicate==1.0            # via flake8-eradicate
 filelock==3.0.12          # via virtualenv
@@ -54,7 +55,8 @@ pycodestyle==2.6.0        # via flake8, flake8-print
 pyflakes==2.2.0           # via autoflake, flake8
 pylint==2.5.3             # via -r requirements/dev-requirements.in
 pyparsing==2.4.7          # via packaging
-pytest==6.0.1             # via -r requirements/dev-requirements.in
+pytest-cov==2.10.1        # via -r requirements/dev-requirements.in
+pytest==6.0.1             # via -r requirements/dev-requirements.in, pytest-cov
 pyyaml==5.3.1             # via bandit, pre-commit
 r2c-py-ast==0.1.0b1       # via flake8-flask
 radon==4.2.0              # via -r requirements/dev-requirements.in

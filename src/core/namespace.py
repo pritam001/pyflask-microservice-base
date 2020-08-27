@@ -9,5 +9,8 @@ class Namespace(object):
         self.url_prefix: str = self.base_api_url + "/" + path
         self.api: Blueprint = Blueprint(path, __name__, url_prefix=self.url_prefix)
 
+    def get_base_api_url(self) -> str:
+        return self.base_api_url
+
     def get_url_prefix(self) -> str:
         return self.url_prefix
