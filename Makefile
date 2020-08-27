@@ -21,7 +21,7 @@ PYTHON = python3
 
 # .PHONY defines parts of the makefile that are not dependant on any specific file
 # This is most often used to store functions
-.PHONY = help setup format lint test debug clean
+.PHONY = all help setup format lint run_tests debug clean
 
 # Defining an array variable
 FILES = input output
@@ -37,7 +37,7 @@ help:
 	@echo "$(BOLD_CYAN)make setup$(RESET_STYLES) : Setup pyflask-service"
 	@echo "$(BOLD_CYAN)make format$(RESET_STYLES) : Format and fix python code in pyflask-service"
 	@echo "$(BOLD_CYAN)make lint$(RESET_STYLES) : Lint pyflask-service"
-	@echo "$(BOLD_CYAN)make test$(RESET_STYLES) : Test pyflask-service"
+	@echo "$(BOLD_CYAN)make run_tests$(RESET_STYLES) : Test pyflask-service"
 	@echo "$(BOLD_CYAN)make debug$(RESET_STYLES) : Debug pyflask-service"
 	@echo "$(BOLD_CYAN)make clean$(RESET_STYLES) : Clean pyflask-service"
 	@echo "$(BOLD_CYAN)make dev-run$(RESET_STYLES) : Run pyflask-service in environment=development"
@@ -88,9 +88,16 @@ lint: #: Run static analysis with flake8, radon, mypy and bandit
 	mypy $(APP_DIR) $(HOME_DIR_PY_FILES)
 	@echo "\n$(BOLD_CYAN)Securing with bandit$(RESET_STYLES) 🕵️️"
 	bandit --version
-	bandit -l -i -r . --format=custom
+	bandit -l -i -r . --format=custom  -c .bandit.yml -x ./$(TEST_DIR)
 	@echo "\n$(BOLD_CYAN)Running pre-commit hooks$(RESET_STYLES) 🏁️️️"
 	pre-commit run --all-files
 	@echo "\n$(BOLD_CYAN)All checks passed$(RESET_STYLES) 🏳️️️️"
+	@echo "\n"
+
+
+run_tests: #: Test with pytest
+	@echo "\n$(BOLD_CYAN)Testing with pytest$(RESET_STYLES) ❄️"
+	pytest --version
+	pytest
 	@echo "\n"
 

@@ -1,5 +1,4 @@
-[bandit]
-    targets: src,test,*.py
-    exclude: dummy.py
-    skips:
-    tests:
+targets: src,*.py
+exclude: dummy.py
+skips:
+tests:
