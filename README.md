@@ -20,6 +20,7 @@ Tools
 [![Security: bandit](https://img.shields.io/badge/security-bandit-yellow.svg?style=flat)](https://github.com/PyCQA/bandit)
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?style=flat&logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
 [![API Specs](https://img.shields.io/badge/specs-flasgger-6D9A00?style=flat&logo=swagger&logoColor=white)](https://github.com/flasgger/flasgger)
+[![Tests: pytest](https://img.shields.io/badge/%20tests-pytest-%23009BDB?style=flat)](https://docs.pytest.org/en/latest/contents.html)
 
 
 Usage Guide

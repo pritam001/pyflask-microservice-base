@@ -3,7 +3,7 @@ from dynaconf import settings
 from src.app import app
 from src.core import Logger
 
-log = Logger()
+log: Logger = Logger()
 
 
 if __name__ == "__main__":

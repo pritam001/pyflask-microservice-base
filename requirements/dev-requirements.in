@@ -30,3 +30,6 @@ pep8-naming
 
 # A framework for managing and maintaining multi-language pre-commit hooks
 pre-commit
+
+# The pytest framework makes it easy to write small tests, yet scales to support complex functional testing for applications and libraries.
+pytest
