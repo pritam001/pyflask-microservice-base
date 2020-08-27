@@ -1,21 +1,23 @@
+from typing import Any, Dict
+
 from apispec.ext.marshmallow import MarshmallowPlugin
 from dynaconf import settings
 from flasgger import APISpec
 
 
-def fetch_flasgger_template(app):
+def fetch_flasgger_template(app) -> Dict[Any, dict]:
     # Create an APISpec
-    title = settings.APP_NAME.replace("-", " ")
-    version = settings.VERSION
-    spec = APISpec(title=title, version=version, openapi_version="3.0", plugins=[MarshmallowPlugin()])
+    title: str = settings.APP_NAME.replace("-", " ")
+    version: str = settings.VERSION
+    spec: APISpec = APISpec(title=title, version=version, openapi_version="3.0", plugins=[MarshmallowPlugin()])
 
-    template = spec.to_flasgger(app, definitions=[], paths=[])
+    template: Dict[Any, dict] = spec.to_flasgger(app, definitions=[], paths=[])
     return template
 
 
-def fetch_flasgger_config():
-    title = settings.APP_NAME.replace("-", " ")
-    base_api_url = settings.API.VERSION + settings.APP_NAME
+def fetch_flasgger_config() -> Dict[str, Any]:
+    title: str = settings.APP_NAME.replace("-", " ")
+    base_api_url: str = settings.API.VERSION + settings.APP_NAME
     return {
         "headers": [],
         "title": title,

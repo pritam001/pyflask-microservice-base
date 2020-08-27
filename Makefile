@@ -21,7 +21,7 @@ PYTHON = python3
 
 # .PHONY defines parts of the makefile that are not dependant on any specific file
 # This is most often used to store functions
-.PHONY = help setup format lint test debug clean
+.PHONY = all help setup format lint format-n-lint test-n-cover pre-commit
 
 # Defining an array variable
 FILES = input output
@@ -37,7 +37,9 @@ help:
 	@echo "$(BOLD_CYAN)make setup$(RESET_STYLES) : Setup pyflask-service"
 	@echo "$(BOLD_CYAN)make format$(RESET_STYLES) : Format and fix python code in pyflask-service"
 	@echo "$(BOLD_CYAN)make lint$(RESET_STYLES) : Lint pyflask-service"
-	@echo "$(BOLD_CYAN)make test$(RESET_STYLES) : Test pyflask-service"
+	@echo "$(BOLD_CYAN)make format-n-lint$(RESET_STYLES) : Format and lint python code in pyflask-service"
+	@echo "$(BOLD_CYAN)make test-n-cover$(RESET_STYLES) : Test and code coverage pyflask-service"
+	@echo "$(BOLD_CYAN)make pre-commit$(RESET_STYLES) : Run pre-commit checks for pyflask-service"
 	@echo "$(BOLD_CYAN)make debug$(RESET_STYLES) : Debug pyflask-service"
 	@echo "$(BOLD_CYAN)make clean$(RESET_STYLES) : Clean pyflask-service"
 	@echo "$(BOLD_CYAN)make dev-run$(RESET_STYLES) : Run pyflask-service in environment=development"
@@ -73,6 +75,9 @@ format: #: Format and fix python code with black, isort, autoflake
 	@echo "\n$(BOLD_CYAN)Flaking$(RESET_STYLES) ❄️"
 	flake8 --version
 	autoflake --remove-all-unused-imports --remove-unused-variables --remove-duplicate-keys --ignore-init-module-imports -i -r $(APP_DIR) $(TEST_DIR) $(HOME_DIR_PY_FILES)
+	@echo "\n$(BOLD_CYAN)Running pre-commit hooks$(RESET_STYLES) 🏁️️️"
+	pre-commit run --all-files
+	@echo "\n$(BOLD_CYAN)All checks passed$(RESET_STYLES) 🏳️️️️"
 	@echo "\n"
 
 
@@ -88,9 +93,25 @@ lint: #: Run static analysis with flake8, radon, mypy and bandit
 	mypy $(APP_DIR) $(HOME_DIR_PY_FILES)
 	@echo "\n$(BOLD_CYAN)Securing with bandit$(RESET_STYLES) 🕵️️"
 	bandit --version
-	bandit -l -i -r . --format=custom
-	@echo "\n$(BOLD_CYAN)Running pre-commit hooks$(RESET_STYLES) 🏁️️️"
-	pre-commit run --all-files
-	@echo "\n$(BOLD_CYAN)All checks passed$(RESET_STYLES) 🏳️️️️"
+	bandit -l -i -r . --format=custom  -c .bandit.yml -x ./$(TEST_DIR)
 	@echo "\n"
 
+
+format-n-lint: #: Format and lint
+	make format
+	make lint
+	@echo "\n"
+
+
+test-n-cover: #: Test with pytest, Code coverage with pytest-cov plugin
+	@echo "\n$(BOLD_CYAN)Testing with pytest$(RESET_STYLES) 📊️"
+	pytest --version
+	pytest
+	@echo "\n"
+
+
+pre-commit: #: Run pre-commit checks : format, lint, test, cover
+	make format-n-lint
+	make test-n-cover
+	@echo "\n$(BOLD_CYAN)Pre commit jobs completed$(RESET_STYLES) 👍"
+	@echo "\n"

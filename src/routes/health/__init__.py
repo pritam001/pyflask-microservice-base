@@ -1,12 +1,13 @@
 from typing import Dict
 
 from flasgger import swag_from
+from flask import Blueprint
 
 from src.core import Logger, Namespace
 
-Client = Namespace("health")
-api = Client.api
-log = Logger()
+Client: Namespace = Namespace("health")
+api: Blueprint = Client.api
+log: Logger = Logger()
 
 
 @api.route("/ping", methods=["GET"])
