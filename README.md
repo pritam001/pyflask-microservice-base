@@ -12,6 +12,7 @@ Project status
 ------------------------------------------------------------------------------
 ![WIP](https://img.shields.io/badge/%20%F0%9F%9A%A7%20-Dev%20in%20progress-important)
 [![Maintainability](https://api.codeclimate.com/v1/badges/cc34f11b1a2b9bb8e216/maintainability)](https://codeclimate.com/github/pritam001/pyflask-microservice-base/maintainability)
+[![codecov](https://codecov.io/gh/pritam001/pyflask-microservice-base/branch/master/graph/badge.svg)](https://codecov.io/gh/pritam001/pyflask-microservice-base)
 
 
 Tools
@@ -26,6 +27,7 @@ Tools
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?style=flat&logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
 [![API Specs](https://img.shields.io/badge/specs-flasgger-6D9A00?style=flat&logo=swagger&logoColor=white)](https://github.com/flasgger/flasgger)
 [![Tests: pytest](https://img.shields.io/badge/%20tests-pytest-%23009BDB?style=flat)](https://docs.pytest.org/en/latest/contents.html)
+[![Coverage: pytest-cov](https://img.shields.io/badge/%20coverage-pytest--cov-%23009BDB?style=flat)](https://docs.pytest.org/en/latest/contents.html)
 
 
 Usage Guide
@@ -50,9 +52,13 @@ Type `make help` for available commands
 
 <p align="center"><img src="documentation/assets/make-help.gif" /></p>
 
+Type `make pre-commit` before committing your changes to run formatters, linters, tests and code coverage collectors
+
+<p align="center"><img src="documentation/assets/make-pre-commit.gif" /></p>
+
 
 ### Linting Guide
-`make format` : Format and fix python code with black, isort, autoflake
+`make format` : Format and fix python code with black, isort, autoflake and pre-commit hooks
 
 <p align="center"><img src="documentation/assets/make-format.gif" /></p>
 
@@ -94,6 +100,7 @@ TODO
 - [ ] Update linting documentation
 - [x] Introduction of testing tools
 - [ ] Testing tools documentation
+- [x] Code coverage
 - [ ] Version handling by tbump
-- [ ] Add CoC, Contribution guidelines, PR and issue 
+- [ ] Add CoC, Contribution guidelines, PR and issue templates
 
