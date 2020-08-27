@@ -73,6 +73,9 @@ format: #: Format and fix python code with black, isort, autoflake
 	@echo "\n$(BOLD_CYAN)Flaking$(RESET_STYLES) ❄️"
 	flake8 --version
 	autoflake --remove-all-unused-imports --remove-unused-variables --remove-duplicate-keys --ignore-init-module-imports -i -r $(APP_DIR) $(TEST_DIR) $(HOME_DIR_PY_FILES)
+	@echo "\n$(BOLD_CYAN)Running pre-commit hooks$(RESET_STYLES) 🏁️️️"
+	pre-commit run --all-files
+	@echo "\n$(BOLD_CYAN)All checks passed$(RESET_STYLES) 🏳️️️️"
 	@echo "\n"
 
 
@@ -89,9 +92,6 @@ lint: #: Run static analysis with flake8, radon, mypy and bandit
 	@echo "\n$(BOLD_CYAN)Securing with bandit$(RESET_STYLES) 🕵️️"
 	bandit --version
 	bandit -l -i -r . --format=custom  -c .bandit.yml -x ./$(TEST_DIR)
-	@echo "\n$(BOLD_CYAN)Running pre-commit hooks$(RESET_STYLES) 🏁️️️"
-	pre-commit run --all-files
-	@echo "\n$(BOLD_CYAN)All checks passed$(RESET_STYLES) 🏳️️️️"
 	@echo "\n"
 
 
