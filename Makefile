@@ -21,7 +21,7 @@ PYTHON = python3
 
 # .PHONY defines parts of the makefile that are not dependant on any specific file
 # This is most often used to store functions
-.PHONY = all help setup format lint test-n-cover
+.PHONY = all help setup format lint format-n-lint test-n-cover pre-commit
 
 # Defining an array variable
 FILES = input output
@@ -37,7 +37,9 @@ help:
 	@echo "$(BOLD_CYAN)make setup$(RESET_STYLES) : Setup pyflask-service"
 	@echo "$(BOLD_CYAN)make format$(RESET_STYLES) : Format and fix python code in pyflask-service"
 	@echo "$(BOLD_CYAN)make lint$(RESET_STYLES) : Lint pyflask-service"
+	@echo "$(BOLD_CYAN)make format-n-lint$(RESET_STYLES) : Format and lint python code in pyflask-service"
 	@echo "$(BOLD_CYAN)make test-n-cover$(RESET_STYLES) : Test and code coverage pyflask-service"
+	@echo "$(BOLD_CYAN)make pre-commit$(RESET_STYLES) : Run pre-commit checks for pyflask-service"
 	@echo "$(BOLD_CYAN)make debug$(RESET_STYLES) : Debug pyflask-service"
 	@echo "$(BOLD_CYAN)make clean$(RESET_STYLES) : Clean pyflask-service"
 	@echo "$(BOLD_CYAN)make dev-run$(RESET_STYLES) : Run pyflask-service in environment=development"
@@ -95,9 +97,21 @@ lint: #: Run static analysis with flake8, radon, mypy and bandit
 	@echo "\n"
 
 
+format-n-lint: #: Format and lint
+	make format
+	make lint
+	@echo "\n"
+
+
 test-n-cover: #: Test with pytest, Code coverage with pytest-cov plugin
 	@echo "\n$(BOLD_CYAN)Testing with pytest$(RESET_STYLES) 📊️"
 	pytest --version
 	pytest
 	@echo "\n"
 
+
+pre-commit: #: Run pre-commit checks : format, lint, test, cover
+	make format-n-lint
+	make test-n-cover
+	@echo "\n$(BOLD_CYAN)Pre commit jobs completed$(RESET_STYLES) 👍"
+	@echo "\n"
