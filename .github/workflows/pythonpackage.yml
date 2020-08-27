@@ -29,4 +29,5 @@ jobs:
     - name: Test and CC
       run: |
         make test-n-cover
+        bash <(curl -s https://codecov.io/bash) -t ${{ secrets.CODECOV_TOKEN }}
     

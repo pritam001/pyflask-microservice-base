@@ -6,7 +6,12 @@ An "optionally opinionated and structured" flask boilerplate microservice for ju
 ![Python](https://img.shields.io/badge/-Python-3776AB?style=flat-square&logo=Python&logoColor=white)
 ![Flask](https://img.shields.io/badge/-Flask-000000?style=flat-square&logo=flask&logoColor=white)
 ![License](https://img.shields.io/github/license/pritam001/pyflask-microservice-base?style=flat-square&label=License)
+
+
+Project status
+------------------------------------------------------------------------------
 ![WIP](https://img.shields.io/badge/%20%F0%9F%9A%A7%20-Dev%20in%20progress-important)
+[![Maintainability](https://api.codeclimate.com/v1/badges/cc34f11b1a2b9bb8e216/maintainability)](https://codeclimate.com/github/pritam001/pyflask-microservice-base/maintainability)
 
 
 Tools
@@ -87,7 +92,7 @@ TODO
 -----------------------------------------------------------------------------
 - [x] Swagger support
 - [ ] Update linting documentation
-- [ ] Introduction of testing tools
+- [x] Introduction of testing tools
 - [ ] Testing tools documentation
 - [ ] Version handling by tbump
 - [ ] Add CoC, Contribution guidelines, PR and issue 
