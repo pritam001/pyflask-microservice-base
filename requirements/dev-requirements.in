@@ -36,3 +36,6 @@ pytest
 
 # This plugin produces coverage reports. Compared to just using coverage run, this plugin does some extras
 pytest-cov
+
+# bump software releases
+tbump
