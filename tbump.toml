@@ -29,9 +29,9 @@ search = '"VERSION": "{current_version}"'
 # run after the files have been patched
 # and before the git commit is made
 
-[[before_commit]]
-name = "Run tests"
-cmd = "make test-n-cover"
+#  [[before_commit]]
+#  name = "check changelog"
+#  cmd = "grep -q {new_version} Changelog.rst"
 
 # Or run some commands after the git tag and the branch
 # have been pushed:
