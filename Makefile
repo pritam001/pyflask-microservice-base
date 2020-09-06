@@ -21,10 +21,10 @@ PYTHON = python3
 
 # .PHONY defines parts of the makefile that are not dependant on any specific file
 # This is most often used to store functions
-.PHONY = all help setup format lint format-n-lint test-n-cover pre-commit
+.PHONY = all help setup format lint format-n-lint test-n-cover pre-commit clean
 
 # Defining an array variable
-FILES = input output
+IGNORED_FILES_AND_FOLDERS = .mypy_cache/ .pytest_cache/ htmlcov/ logs/ .coverage
 
 # Defines the default target that `make` will to try to make, or in the case of a phony target, execute the specified commands
 # This target is executed whenever we just type `make`
@@ -115,3 +115,10 @@ pre-commit: #: Run pre-commit checks : format, lint, test, cover
 	make test-n-cover
 	@echo "\n$(BOLD_CYAN)Pre commit jobs completed$(RESET_STYLES) 👍"
 	@echo "\n"
+
+
+clean: #: Clean unnecessary files
+	@echo "\n$(BOLD_CYAN)Cleaning unnecessary files$(RESET_STYLES) 🚿"
+	rm -rf $(IGNORED_FILES_AND_FOLDERS)
+	@echo "\n"
+
