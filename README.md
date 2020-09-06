@@ -28,6 +28,7 @@ Tools
 [![API Specs](https://img.shields.io/badge/specs-flasgger-6D9A00?style=flat&logo=swagger&logoColor=white)](https://github.com/flasgger/flasgger)
 [![Tests: pytest](https://img.shields.io/badge/%20tests-pytest-%23009BDB?style=flat)](https://docs.pytest.org/en/latest/contents.html)
 [![Coverage: pytest-cov](https://img.shields.io/badge/%20coverage-pytest--cov-%23009BDB?style=flat)](https://docs.pytest.org/en/latest/contents.html)
+[![Version Handling: tbump](https://img.shields.io/badge/%20version%20handling-tbump-%23009BDB?style=flat)](https://docs.pytest.org/en/latest/contents.html)
 
 
 Usage Guide
@@ -84,6 +85,11 @@ To be updated
 
 Contributing
 ------------------------------------------------------------------------------
+1. Stargaze this repository
+1. Fork this repository
+1. Commit your changes
+1. Create pull request to `development` branch
+
 [![](https://sourcerer.io/fame/pritam001/pritam001/pyflask-microservice-base/images/0)](https://sourcerer.io/fame/pritam001/pritam001/pyflask-microservice-base/links/0)
 [![](https://sourcerer.io/fame/pritam001/pritam001/pyflask-microservice-base/images/1)](https://sourcerer.io/fame/pritam001/pritam001/pyflask-microservice-base/links/1)
 [![](https://sourcerer.io/fame/pritam001/pritam001/pyflask-microservice-base/images/2)](https://sourcerer.io/fame/pritam001/pritam001/pyflask-microservice-base/links/2)
