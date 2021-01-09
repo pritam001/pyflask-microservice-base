@@ -13,6 +13,8 @@ https://www.shellhacks.com/python-install-pip-mac-ubuntu-centos/
 
 `export PATH="/usr/local/anaconda3/bin:$PATH"`
 
+`conda init zsh`
+
 ##### Create conda virtual env
 `conda create -n pyflask-base python=3.8`
 
