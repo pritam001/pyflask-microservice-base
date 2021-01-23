@@ -89,8 +89,9 @@ Contributing
 ------------------------------------------------------------------------------
 1. Stargaze this repository
 1. Fork this repository
+1. Add this project as `upstream`
 1. Commit your changes
-1. Create pull request to `development` branch
+1. Create pull request to `upstream/development` branch
 
 [![](https://sourcerer.io/fame/pritam001/pritam001/pyflask-microservice-base/images/0)](https://sourcerer.io/fame/pritam001/pritam001/pyflask-microservice-base/links/0)
 [![](https://sourcerer.io/fame/pritam001/pritam001/pyflask-microservice-base/images/1)](https://sourcerer.io/fame/pritam001/pritam001/pyflask-microservice-base/links/1)
@@ -109,6 +110,7 @@ TODO
 - [x] Introduction of testing tools
 - [ ] Testing tools documentation
 - [x] Code coverage
-- [ ] Version handling by tbump
+- [x] Version handling by tbump
+- [x] Docker support
 - [ ] Add CoC, Contribution guidelines, PR and issue templates
 
