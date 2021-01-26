@@ -6,4 +6,4 @@ service_name: pyflask-microservice
 python_env_name: pyflask-env
 # env_manager: name of the environment manager used in the project
 # supported environment managers: venv | conda
-env_manager: conda
+python_env_manager: conda

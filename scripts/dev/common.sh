@@ -15,3 +15,13 @@ function parse_yaml() {
       }
    }'
 }
+
+function get_python3_version() {
+  local python3_version
+  python3_version=$(python3 --version | cut -d " " -f 2)
+  local python3_version_major
+  python3_version_major=$(python3 --version | cut -d " " -f 2 | cut -d "." -f 1)
+  local python3_version_minor
+  python3_version_minor=$(python3 --version | cut -d " " -f 2 | cut -d "." -f 2)
+  echo 'python3_version="'"$python3_version"'"; python3_version_major="'"$python3_version_major"'"; python3_version_minor="'"$python3_version_minor"'"'
+}
