@@ -1,0 +1,9 @@
+# is_personalized decides if the codebase is personalized
+is_personalized: false
+# service_name is base name for the service
+service_name: pyflask-microservice
+# python_env_name is the environment name used by the environment manager
+python_env_name: pyflask-env
+# env_manager: name of the environment manager used in the project
+# supported environment managers: venv | conda
+env_manager: conda

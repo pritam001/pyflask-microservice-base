@@ -93,16 +93,6 @@ Contributing
 1. Commit your changes
 1. Create pull request to `upstream/development` branch
 
-[![](https://sourcerer.io/fame/pritam001/pritam001/pyflask-microservice-base/images/0)](https://sourcerer.io/fame/pritam001/pritam001/pyflask-microservice-base/links/0)
-[![](https://sourcerer.io/fame/pritam001/pritam001/pyflask-microservice-base/images/1)](https://sourcerer.io/fame/pritam001/pritam001/pyflask-microservice-base/links/1)
-[![](https://sourcerer.io/fame/pritam001/pritam001/pyflask-microservice-base/images/2)](https://sourcerer.io/fame/pritam001/pritam001/pyflask-microservice-base/links/2)
-[![](https://sourcerer.io/fame/pritam001/pritam001/pyflask-microservice-base/images/3)](https://sourcerer.io/fame/pritam001/pritam001/pyflask-microservice-base/links/3)
-[![](https://sourcerer.io/fame/pritam001/pritam001/pyflask-microservice-base/images/4)](https://sourcerer.io/fame/pritam001/pritam001/pyflask-microservice-base/links/4)
-[![](https://sourcerer.io/fame/pritam001/pritam001/pyflask-microservice-base/images/5)](https://sourcerer.io/fame/pritam001/pritam001/pyflask-microservice-base/links/5)
-[![](https://sourcerer.io/fame/pritam001/pritam001/pyflask-microservice-base/images/6)](https://sourcerer.io/fame/pritam001/pritam001/pyflask-microservice-base/links/6)
-[![](https://sourcerer.io/fame/pritam001/pritam001/pyflask-microservice-base/images/7)](https://sourcerer.io/fame/pritam001/pritam001/pyflask-microservice-base/links/7)
-
-
 TODO
 -----------------------------------------------------------------------------
 - [x] Swagger support
