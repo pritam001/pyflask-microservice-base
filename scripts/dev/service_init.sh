@@ -1,24 +1,17 @@
 #!/usr/bin/env bash
 
-declare -r style_bold_red="\033[1m\033[31m"
-declare -r style_bold_green="\033[1m\033[32m"
-declare -r style_bold_blue="\033[1m\033[34m"
-declare -r style_bold_magenta="\033[1m\033[35m"
-declare -r style_bold_cyan="\033[1m\033[36m"
-declare -r style_reset="\033[0m"
-
 declare SCRIPT_DIR
 SCRIPT_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
-declare PROJECT_DIR
-PROJECT_DIR="$(dirname "$(dirname "$SCRIPT_DIR")")"
 
 # include common functions
 . "$SCRIPT_DIR"/common.sh
 
 function check_python3_dep_versions() {
+  # shellcheck disable=SC2154
   echo "$style_bold_blue""Checking python3 dependencies . . .""$style_reset"
   local python3_base
   python3_base=$(which python3)
+  # shellcheck disable=SC2154
   echo "$style_bold_cyan""Python3 Base :""$style_reset $python3_base"
   local python3_version
   python3_version=$(python3 --version)
@@ -39,28 +32,19 @@ function validate_conda_installation() {
     conda_version=$(conda --version)
     echo "installed conda version: $conda_version"
   else
+    # shellcheck disable=SC2154
     echo "$style_bold_red""Error : conda is not installed""$style_reset"
     exit 1
   fi
 }
 
 function recreate_conda_env() {
-  # run conda commands from bash
-  # https://github.com/conda/conda/issues/7980
-  local conda_info_base
-  conda_info_base=$(conda info --base)
-  echo "$conda_info_base"/etc/profile.d/conda.sh
-  source "$conda_info_base"/etc/profile.d/conda.sh
-
-  echo "$style_bold_cyan""Deactivating existing conda environment""$style_reset"
-  conda deactivate
-
-  echo "$style_bold_cyan""Removing existing conda environment""$style_reset"
-  # shellcheck disable=SC2154
-  conda env remove --name "$pyflask_pref_python_env_name"
+  source_conda_commands
+  remove_conda_env
   echo "$style_bold_cyan""Creating new conda environment""$style_reset"
   # shellcheck disable=SC2154
   local conda_python_version="$pyflask_pref_python_base_version_major"".""$pyflask_pref_python_base_version_minor"
+  # shellcheck disable=SC2154
   conda create -n "$pyflask_pref_python_env_name" python="$conda_python_version"
   echo "$style_bold_cyan""Activating new conda environment""$style_reset"
   conda activate "$pyflask_pref_python_env_name"
@@ -77,11 +61,7 @@ function validate_venv_installation() {
 }
 
 function recreate_venv_env() {
-  echo "$style_bold_cyan""Deactivating existing venv environment""$style_reset"
-  deactivate
-  echo "$style_bold_cyan""Removing existing venv environment""$style_reset"
-  # shellcheck disable=SC2154
-  rm -rf "$pyflask_pref_python_env_name"
+  remove_venv_env
   echo "$style_bold_cyan""Creating new venv environment""$style_reset"
   python3 -m venv "$pyflask_pref_python_env_name"
   echo "$style_bold_cyan""Activating new venv environment""$style_reset"
@@ -113,6 +93,7 @@ function main() {
   if [ "$pyflask_pref_python_env_manager" == "conda" ]; then
     validate_conda_installation
     recreate_conda_env
+    # shellcheck disable=SC2154
     echo "$style_bold_green""Conda environment initialization complete""$style_reset"
   elif [ "$pyflask_pref_python_env_manager" == "venv" ]; then
     validate_venv_installation
