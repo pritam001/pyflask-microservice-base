@@ -14,7 +14,7 @@
             },
             "VERSION": "/api/v1/"
         },
-        "APP_NAME": "pyflask-service",
+        "APP_NAME": "pyflask-microservice",
         "LOGGING": {
             "basepath": "logs"
         },

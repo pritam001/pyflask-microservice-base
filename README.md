@@ -71,9 +71,9 @@ Type `make pre-commit` before committing your changes to run formatters, linters
 
 
 ### Documentation
-Flasgger docs can be found at http://0.0.0.0:8420/api/v1/pyflask-service/swagger
+Flasgger docs can be found at http://0.0.0.0:8420/api/v1/pyflask-microservice/swagger
 
-API specs can be found at http://0.0.0.0:8420/api/v1/pyflask-service/swagger_spec
+API specs can be found at http://0.0.0.0:8420/api/v1/pyflask-microservice/swagger_spec
 
 Flasgger UI version: v2 | OpenAPI version: 2
 

@@ -1,5 +1,5 @@
-CONDA_ENV_NAME=pyflask-base
-APP_NAME=pyflask-service
+CONDA_ENV_NAME=pyflask-base-env
+APP_NAME=pyflask-microservice
 APP_DIR=src
 TEST_DIR=test
 HOME_DIR_PY_FILES=*.py
@@ -38,32 +38,36 @@ IGNORED_FILES_AND_FOLDERS = .mypy_cache/ .pytest_cache/ htmlcov/ logs/ .coverage
 # The @ makes sure that the command itself isn't echoed in the terminal
 help:
 	@echo "$(BOLD_BLUE)-----------------------------MAKE GUIDE----------------------------$(RESET_STYLES)"
-	@echo "$(BOLD_CYAN)make init$(RESET_STYLES) : Initialize pyflask-service"
-	@echo "$(BOLD_CYAN)make setup$(RESET_STYLES) : Setup pyflask-service"
-	@echo "$(BOLD_CYAN)make format$(RESET_STYLES) : Format and fix python code in pyflask-service"
-	@echo "$(BOLD_CYAN)make lint$(RESET_STYLES) : Lint pyflask-service"
-	@echo "$(BOLD_CYAN)make format-n-lint$(RESET_STYLES) : Format and lint python code in pyflask-service"
-	@echo "$(BOLD_CYAN)make test-n-cover$(RESET_STYLES) : Test and code coverage pyflask-service"
-	@echo "$(BOLD_CYAN)make pre-commit$(RESET_STYLES) : Run pre-commit checks for pyflask-service"
-	@echo "$(BOLD_CYAN)make debug-run$(RESET_STYLES) : Debug pyflask-service"
-	@echo "$(BOLD_CYAN)make dev-run$(RESET_STYLES) : Run pyflask-service in environment=development"
-	@echo "$(BOLD_CYAN)make prod-run$(RESET_STYLES) : Run pyflask-service in environment=prod"
-	@echo "$(BOLD_CYAN)make clean$(RESET_STYLES) : Clean pyflask-service"
-	@echo "$(BOLD_CYAN)make wipe$(RESET_STYLES) : Wipe pyflask-service"
-	@echo "$(BOLD_CYAN)make clean-n-wipe$(RESET_STYLES) : Clean and wipe pyflask-service"
+	@echo "$(BOLD_CYAN)make init$(RESET_STYLES) : Initialize pyflask-microservice"
+	@echo "$(BOLD_CYAN)make setup$(RESET_STYLES) : Setup pyflask-microservice"
+	@echo "$(BOLD_CYAN)make format$(RESET_STYLES) : Format and fix python code in pyflask-microservice"
+	@echo "$(BOLD_CYAN)make lint$(RESET_STYLES) : Lint pyflask-microservice"
+	@echo "$(BOLD_CYAN)make format-n-lint$(RESET_STYLES) : Format and lint python code in pyflask-microservice"
+	@echo "$(BOLD_CYAN)make test-n-cover$(RESET_STYLES) : Test and code coverage pyflask-microservice"
+	@echo "$(BOLD_CYAN)make pre-commit$(RESET_STYLES) : Run pre-commit checks for pyflask-microservice"
+	@echo "$(BOLD_CYAN)make debug-run$(RESET_STYLES) : Debug pyflask-microservice"
+	@echo "$(BOLD_CYAN)make dev-run$(RESET_STYLES) : Run pyflask-microservice in environment=development"
+	@echo "$(BOLD_CYAN)make prod-run$(RESET_STYLES) : Run pyflask-microservice in environment=prod"
+	@echo "$(BOLD_CYAN)make clean$(RESET_STYLES) : Clean pyflask-microservice"
+	@echo "$(BOLD_CYAN)make wipe$(RESET_STYLES) : Wipe pyflask-microservice"
+	@echo "$(BOLD_CYAN)make clean-n-wipe$(RESET_STYLES) : Clean and wipe pyflask-microservice"
 	@echo "$(BOLD_BLUE)-------------------------------------------------------------------$(RESET_STYLES)"
 
 
 init: #: Initialize and personalize python environment
-	@echo "\n$(BOLD_BLUE)Initialize pyflask base$(RESET_STYLES)"
+	@echo "\n$(BOLD_BLUE)Initialize pyflask-microservice$(RESET_STYLES)"
 	sh scripts/dev/service_init.sh
 
 
 setup: #: Use pip-tools, pip-compile, pip install
-	@echo "\n$(BOLD_BLUE)Setting up pyflask base$(RESET_STYLES)"
-	# Check for venv, conda else exit
+	@echo "\n$(BOLD_BLUE)Setting up pyflask-microservice$(RESET_STYLES)"
+	@echo "\n$(BOLD_CYAN)Checking dependencies . . .$(RESET_STYLES)"
+	sh scripts/dev/check_env_manager.sh
+	sh scripts/dev/check_python_version.sh
+	@echo "\n$(BOLD_CYAN)Activating python environment . . .$(RESET_STYLES)"
+	sh scripts/dev/activate_python_env.sh
 	@echo "\n$(BOLD_CYAN)Installing pip-tools . . .$(RESET_STYLES)"
-	pip install pip-tools
+	pip3 install pip-tools
 	@echo "\n$(BOLD_CYAN)Generating requirements$(RESET_STYLES)"
 	pip-compile -q --build-isolation --output-file=requirements/requirements.txt requirements/requirements.in
 	@echo "\n$(BOLD_CYAN)Generating dev requirements$(RESET_STYLES)"
@@ -71,9 +75,9 @@ setup: #: Use pip-tools, pip-compile, pip install
 	@echo "\n$(BOLD_CYAN)Syncing requirements$(RESET_STYLES)"
 	pip-sync -q requirements/requirements.txt requirements/dev-requirements.txt
 	@echo "\n$(BOLD_CYAN)Installing requirements$(RESET_STYLES)"
-	pip install -r requirements/requirements.txt
+	pip3 install -r requirements/requirements.txt
 	@echo "\n$(BOLD_CYAN)Installing dev requirements$(RESET_STYLES)"
-	pip install -r requirements/dev-requirements.txt
+	pip3 install -r requirements/dev-requirements.txt
 	@echo "\n$(BOLD_CYAN)Adding pre-commit hooks$(RESET_STYLES)"
 	pre-commit install
 	@echo "\n$(BOLD_GREEN)Setup complete$(RESET_STYLES)"
