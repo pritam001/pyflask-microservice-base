@@ -1,5 +1,5 @@
-CONDA_ENV_NAME=pyflask-base-env
-APP_NAME=pyflask-microservice
+PYTHON_ENV_NAME=pyflask-base-env
+APPLICATION_NAME=pyflask-microservice
 APP_DIR=src
 TEST_DIR=test
 HOME_DIR_PY_FILES=*.py
@@ -92,9 +92,6 @@ format: #: Format and fix python code with black, isort, autoflake
 	@echo "\n$(BOLD_CYAN)Flaking$(RESET_STYLES) ❄️"
 	flake8 --version
 	autoflake --remove-all-unused-imports --remove-unused-variables --remove-duplicate-keys --ignore-init-module-imports -i -r $(APP_DIR) $(TEST_DIR) $(HOME_DIR_PY_FILES)
-	@echo "\n$(BOLD_CYAN)Running pre-commit hooks$(RESET_STYLES) 🏁️️️"
-	pre-commit run --all-files
-	@echo "\n$(BOLD_GREEN)All checks passed$(RESET_STYLES) 🏳️️️️"
 
 
 lint: #: Run static analysis with flake8, radon, mypy and bandit
@@ -109,7 +106,7 @@ lint: #: Run static analysis with flake8, radon, mypy and bandit
 	mypy $(APP_DIR) $(HOME_DIR_PY_FILES)
 	@echo "\n$(BOLD_CYAN)Securing with bandit$(RESET_STYLES) 🕵️️"
 	bandit --version
-	bandit -l -i -r . --format=custom  -c .bandit.yml -x ./$(TEST_DIR)
+	bandit -l -i -r . --format=custom  -c .bandit.yml -x ./$(TEST_DIR),./$(PYTHON_ENV_NAME)
 	@echo "\n"
 
 
@@ -129,6 +126,9 @@ test-n-cover: #: Test with pytest, Code coverage with pytest-cov plugin
 pre-commit: #: Run pre-commit checks : format, lint, test, cover
 	@echo "\n$(BOLD_BLUE)Starting pre-commit jobs . . .$(RESET_STYLES)"
 	make format-n-lint
+	@echo "\n$(BOLD_CYAN)Running pre-commit hooks$(RESET_STYLES) 🏁️️️"
+	pre-commit run --all-files
+	@echo "\n$(BOLD_GREEN)All checks passed$(RESET_STYLES) 🏳️️️️"
 	make test-n-cover
 	@echo "\n$(BOLD_GREEN)Pre-commit jobs completed$(RESET_STYLES) 👍"
 
