@@ -1,8 +1,8 @@
-from dynaconf import settings
 from flasgger import Swagger
 from flask import Flask
 from flask_cors import CORS
 
+from src.config.dynaconf import settings
 from src.config.flasgger import fetch_flasgger_config, fetch_flasgger_template
 from src.core import Logger, Singleton
 

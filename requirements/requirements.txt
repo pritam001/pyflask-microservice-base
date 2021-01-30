@@ -37,6 +37,8 @@ mistune==0.8.4
     # via flasgger
 pyrsistent==0.17.3
     # via jsonschema
+python-dotenv==0.15.0
+    # via -r requirements/requirements.in
 pyyaml==5.4.1
     # via flasgger
 six==1.15.0

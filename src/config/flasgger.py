@@ -1,8 +1,9 @@
 from typing import Any, Dict
 
 from apispec.ext.marshmallow import MarshmallowPlugin
-from dynaconf import settings
 from flasgger import APISpec
+
+from src.config.dynaconf import settings
 
 
 def fetch_flasgger_template(app) -> Dict[Any, dict]:

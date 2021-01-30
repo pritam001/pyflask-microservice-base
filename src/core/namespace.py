@@ -1,5 +1,6 @@
-from dynaconf import settings
 from flask import Blueprint
+
+from src.config.dynaconf import settings
 
 
 class Namespace(object):

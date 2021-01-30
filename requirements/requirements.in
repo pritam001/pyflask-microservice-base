@@ -6,3 +6,4 @@ flask_cors
 flasgger
 marshmallow
 apispec
+python-dotenv
