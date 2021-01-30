@@ -49,7 +49,9 @@ function main() {
   # shellcheck disable=SC2154
   if [ "$pyflask_pref_is_personalized" == "false" ]; then
     echo "$style_bold_blue""Starting project personalization . . .""$style_reset"
-    python3 scripts/dev/personalize.py
+    rm -rf .github
+    pip3 install pyyaml
+    python3 scripts/dev/personalize.py "$pyflask_pref_python_env_name"
     printf "\n"
   fi
 
