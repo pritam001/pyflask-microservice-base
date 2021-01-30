@@ -17,7 +17,7 @@ Project status
 
 Tools
 ------------------------------------------------------------------------------
-[![Min Python Version 3.8+](https://img.shields.io/badge/python-3.8+-3776AB.svg?style=flat)](https://www.python.org/download/releases/3.8.0/)
+[![Min Python Version 3.7](https://img.shields.io/badge/python-3.7+-3776AB.svg?style=flat)](https://www.python.org/download/releases/3.8.0/)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg?style=flat)](https://github.com/psf/black)
 [![Static Analysis: flake8](https://img.shields.io/badge/static%20analysis-flake8-cccccc.svg?style=flat)](https://github.com/PyCQA/flake8/)
 [![Cyclomatic Complexity: radon](https://img.shields.io/badge/cyclomatic%20complexity-radon-ff5252.svg?style=flat)](https://github.com/rubik/radon)
@@ -41,7 +41,7 @@ This is a template project hosted on GitHub which can be used to create new repo
 1. `git clone https://www.github.com/username/my-pyflask-project.git`
 1. `cd my-pyflask-project`
 1. `make init` : Initialize and personalize project
-1. `make setup` : Use pip-tools, pip-compile, pip install to setup python packages
+1. `make setup` : Use pip-tools, pip-compile, pip install to set up python packages
 
 *+ [GitHub Guide: Creating a repository from a template](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template)
 <br>
