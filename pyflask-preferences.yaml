@@ -11,3 +11,5 @@ python_env_manager: venv
 # supported python versions: 3.7 | 3.8
 python_base_version_major: 3
 python_base_version_minor: 8
+
+docker_maintainer_details: User <user@gmail.com>

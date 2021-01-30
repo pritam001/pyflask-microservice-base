@@ -1,5 +1,8 @@
+# pyflask_config: python_env_name
 PYTHON_ENV_NAME=pyflask-base-env
+# pyflask_config: service_name
 APPLICATION_NAME=pyflask-microservice
+
 APP_DIR=src
 TEST_DIR=test
 HOME_DIR_PY_FILES=*.py
@@ -141,14 +144,25 @@ pre-commit: #: Run pre-commit checks : format, lint, test, cover
 
 debug-run: #: Run application in debug mode
 	@echo "\n$(BOLD_BLUE)Starting application in debug mode . . .$(RESET_STYLES)"
+	FLASK_ENV=development python3 service_master.py
 
 
 dev-run: #: Run application in dev mode
 	@echo "\n$(BOLD_BLUE)Starting application in dev mode . . .$(RESET_STYLES)"
+	FLASK_ENV=development python3 service_master.py
 
 
 prod-run: #: Run application in prod mode
 	@echo "\n$(BOLD_BLUE)Starting application in prod mode . . .$(RESET_STYLES)"
+	FLASK_ENV=prod python3 service_master.py
+
+
+docker-build: #: Build docker image for the application
+	@echo "\n$(BOLD_BLUE)Building docker image . . .$(RESET_STYLES)"
+
+
+docker-start: #: Start docker image for the application
+	@echo "\n$(BOLD_BLUE)Starting dockerized application . . .$(RESET_STYLES)"
 
 
 clean: #: Clean unnecessary files

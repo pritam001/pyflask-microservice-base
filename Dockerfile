@@ -1,7 +1,8 @@
 # pyflask_config: python_version
 FROM tiangolo/uwsgi-nginx:python3.8
 
-LABEL maintainer="Pritam Sarkar <001pritam2012@gmail.com>"
+# pyflask_config: docker_maintainer_details
+LABEL maintainer="User <user@gmail.com>"
 
 #RUN make setup
 #
