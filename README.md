@@ -1,3 +1,4 @@
+[//]: <> (pyflask_config: service_name)
 pyflask-microservice-base
 ------------------------------------------------------------------------------
 An "optionally opinionated and structured" flask boilerplate microservice for jump-starting development
@@ -18,6 +19,7 @@ Project status
 Tools
 ------------------------------------------------------------------------------
 [![Min Python Version 3.7](https://img.shields.io/badge/python-3.7+-3776AB.svg?style=flat)](https://www.python.org/download/releases/3.8.0/)
+[![Min GNU Make Version 4.3](https://img.shields.io/badge/make-4.3+-222222.svg?style=flat)](https://www.gnu.org/software/make/manual/make.html)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg?style=flat)](https://github.com/psf/black)
 [![Static Analysis: flake8](https://img.shields.io/badge/static%20analysis-flake8-cccccc.svg?style=flat)](https://github.com/PyCQA/flake8/)
 [![Cyclomatic Complexity: radon](https://img.shields.io/badge/cyclomatic%20complexity-radon-ff5252.svg?style=flat)](https://github.com/rubik/radon)
@@ -69,18 +71,15 @@ Type `make pre-commit` before committing your changes to run formatters, linters
 
 
 ### Documentation
+[//]: <> (pyflask_config: service_name)
 Flasgger docs can be found at http://0.0.0.0:8420/api/v1/pyflask-microservice/swagger
 
+[//]: <> (pyflask_config: service_name)
 API specs can be found at http://0.0.0.0:8420/api/v1/pyflask-microservice/swagger_spec
 
 Flasgger UI version: v2 | OpenAPI version: 2
 
 <p align="center"><img src="documentation/assets/flasgger_intro.png" /></p>
-
-
-Development Setup
-------------------------------------------------------------------------------
-To be updated
 
 
 Contributing

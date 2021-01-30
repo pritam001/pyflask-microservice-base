@@ -64,6 +64,7 @@ setup: #: Use pip-tools, pip-compile, pip install
 	@echo "\n$(BOLD_BLUE)Setting up pyflask-microservice$(RESET_STYLES)"
 	@echo "\n$(BOLD_CYAN)Activating python environment . . .$(RESET_STYLES)"
 	sh scripts/dev/activate_python_env.sh
+	sh scripts/dev/check_python_env.sh
 	@echo "\n$(BOLD_CYAN)Checking dependencies . . .$(RESET_STYLES)"
 	sh scripts/dev/check_env_manager.sh
 	sh scripts/dev/check_python_version.sh
@@ -82,6 +83,7 @@ setup: #: Use pip-tools, pip-compile, pip install
 
 upgrade: #: upgrade requirements to latest versions
 	@echo "\n$(BOLD_BLUE)Upgrading dependencies of pyflask-microservice$(RESET_STYLES)"
+	python3 -m pip install --upgrade pip
 	pip-compile --upgrade requirements/requirements.in --output-file requirements/requirements.txt
 	pip-compile --upgrade requirements/dev-requirements.in --output-file requirements/dev-requirements.txt
 	@echo "\n$(BOLD_GREEN)Upgrade complete$(RESET_STYLES)"

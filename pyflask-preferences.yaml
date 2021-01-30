@@ -1,4 +1,4 @@
-# is_personalized decides if the codebase is personalized
+# is_personalized decides if the codebase has been personalized
 is_personalized: false
 # service_name is base name for the service
 service_name: pyflask-microservice

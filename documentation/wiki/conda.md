@@ -16,6 +16,8 @@ https://www.shellhacks.com/python-install-pip-mac-ubuntu-centos/
 `conda init zsh`
 
 ##### Create conda virtual env
+
+[//]: <> ( # pyflask_config: python_version )
 `conda create -n pyflask-base-env python=3.8`
 
 ```
