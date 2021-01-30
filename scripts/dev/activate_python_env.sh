@@ -7,6 +7,7 @@ SCRIPT_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
 . "$SCRIPT_DIR"/common.sh
 
 function activate_python_env() {
+  deactivate
   # shellcheck disable=SC2154
   if [ "$pyflask_pref_python_env_manager" == "conda" ]; then
     source_conda_commands
