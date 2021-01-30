@@ -12,6 +12,7 @@ astroid==2.4.2
     # via pylint
 attrs==19.3.0
     # via
+    #   -c requirements/requirements.txt
     #   flake8-eradicate
     #   pytest
     #   tbump
@@ -26,7 +27,9 @@ cfgv==3.2.0
 cli-ui==0.10.3
     # via tbump
 click==7.1.2
-    # via black
+    # via
+    #   -c requirements/requirements.txt
+    #   black
 colorama==0.4.3
     # via
     #   cli-ui
@@ -152,6 +155,7 @@ pytest==6.0.1
     #   pytest-cov
 pyyaml==5.3.1
     # via
+    #   -c requirements/requirements.txt
     #   bandit
     #   pre-commit
 r2c-py-ast==0.1.0b1
@@ -164,6 +168,7 @@ schema==0.7.2
     # via tbump
 six==1.15.0
     # via
+    #   -c requirements/requirements.txt
     #   astroid
     #   bandit
     #   flake8-print

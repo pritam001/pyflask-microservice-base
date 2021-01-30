@@ -1,3 +1,7 @@
+# https://github.com/jazzband/pip-tools
+# constrain the dev requirements to packages already selected for production in requirements.txt
+-c requirements.txt
+
 # Pylint is a Python static code analysis tool which looks for programming errors, helps enforcing a coding standard, sniffs for code smells and offers simple refactoring suggestions
 pylint
 # Black is the uncompromising Python code formatter

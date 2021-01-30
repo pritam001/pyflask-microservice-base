@@ -25,7 +25,7 @@ PYTHON = python3
 
 # .PHONY defines parts of the makefile that are not dependant on any specific file
 # This is most often used to store functions
-.PHONY = all help init setup format lint format-n-lint test-n-cover pre-commit debug-run dev-run prod-run clean wipe clean-n-wipe
+.PHONY = all help init setup upgrade format lint format-n-lint test-n-cover pre-commit debug-run dev-run prod-run clean wipe clean-n-wipe
 
 # Defining an array variable
 IGNORED_FILES_AND_FOLDERS = .mypy_cache/ .pytest_cache/ htmlcov/ logs/ .coverage
@@ -40,6 +40,7 @@ help:
 	@echo "$(BOLD_BLUE)-----------------------------MAKE GUIDE----------------------------$(RESET_STYLES)"
 	@echo "$(BOLD_CYAN)make init$(RESET_STYLES) : Initialize pyflask-microservice"
 	@echo "$(BOLD_CYAN)make setup$(RESET_STYLES) : Setup pyflask-microservice"
+	@echo "$(BOLD_CYAN)make upgrade$(RESET_STYLES) : Upgrade dependencies of pyflask-microservice"
 	@echo "$(BOLD_CYAN)make format$(RESET_STYLES) : Format and fix python code in pyflask-microservice"
 	@echo "$(BOLD_CYAN)make lint$(RESET_STYLES) : Lint pyflask-microservice"
 	@echo "$(BOLD_CYAN)make format-n-lint$(RESET_STYLES) : Format and lint python code in pyflask-microservice"
@@ -73,14 +74,16 @@ setup: #: Use pip-tools, pip-compile, pip install
 	@echo "\n$(BOLD_CYAN)Generating dev requirements$(RESET_STYLES)"
 	pip-compile -q --build-isolation --output-file=requirements/dev-requirements.txt requirements/dev-requirements.in
 	@echo "\n$(BOLD_CYAN)Syncing requirements$(RESET_STYLES)"
-	pip-sync -q requirements/requirements.txt requirements/dev-requirements.txt
-	@echo "\n$(BOLD_CYAN)Installing requirements$(RESET_STYLES)"
-	pip3 install -r requirements/requirements.txt
-	@echo "\n$(BOLD_CYAN)Installing dev requirements$(RESET_STYLES)"
-	pip3 install -r requirements/dev-requirements.txt
+	pip-sync requirements/requirements.txt requirements/dev-requirements.txt
 	@echo "\n$(BOLD_CYAN)Adding pre-commit hooks$(RESET_STYLES)"
 	pre-commit install
 	@echo "\n$(BOLD_GREEN)Setup complete$(RESET_STYLES)"
+
+
+upgrade: #: upgrade requirements to latest versions
+	@echo "\n$(BOLD_BLUE)Upgrading dependencies of pyflask-microservice$(RESET_STYLES)"
+	pip-compile --upgrade
+	@echo "\n$(BOLD_GREEN)Upgrade complete$(RESET_STYLES)"
 
 
 format: #: Format and fix python code with black, isort, autoflake
