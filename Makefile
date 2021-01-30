@@ -82,7 +82,8 @@ setup: #: Use pip-tools, pip-compile, pip install
 
 upgrade: #: upgrade requirements to latest versions
 	@echo "\n$(BOLD_BLUE)Upgrading dependencies of pyflask-microservice$(RESET_STYLES)"
-	pip-compile --upgrade
+	pip-compile --upgrade requirements/requirements.in --output-file requirements/requirements.txt
+	pip-compile --upgrade requirements/dev-requirements.in --output-file requirements/dev-requirements.txt
 	@echo "\n$(BOLD_GREEN)Upgrade complete$(RESET_STYLES)"
 
 

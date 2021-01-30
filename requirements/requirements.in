@@ -1,3 +1,5 @@
+attrs<20.0.0
+
 Flask
 dynaconf
 flask_cors
