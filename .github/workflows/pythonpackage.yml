@@ -22,7 +22,7 @@ jobs:
     - name: Install dependencies
       run: |
         pip3 install pip-tools
-        pip-sync requirements/requirements.txt
+        pip-sync requirements/requirements.txt requirements/dev-requirements.txt
     - name: Lint
       run: |
         pip install flake8
