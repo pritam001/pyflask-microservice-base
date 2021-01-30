@@ -28,7 +28,7 @@ PYTHON = python3
 
 # .PHONY defines parts of the makefile that are not dependant on any specific file
 # This is most often used to store functions
-.PHONY = all help init setup upgrade format lint format-n-lint test-n-cover pre-commit debug-run dev-run prod-run clean wipe clean-n-wipe
+.PHONY = all help init setup upgrade format lint format-n-lint test-n-cover pre-commit debug-run dev-run prod-run docker-build docker-run clean wipe clean-n-wipe
 
 # Defining an array variable
 IGNORED_FILES_AND_FOLDERS = .mypy_cache/ .pytest_cache/ htmlcov/ logs/ .coverage
@@ -52,6 +52,8 @@ help:
 	@echo "$(BOLD_CYAN)make debug-run$(RESET_STYLES) : Debug pyflask-microservice"
 	@echo "$(BOLD_CYAN)make dev-run$(RESET_STYLES) : Run pyflask-microservice in environment=development"
 	@echo "$(BOLD_CYAN)make prod-run$(RESET_STYLES) : Run pyflask-microservice in environment=prod"
+	@echo "$(BOLD_CYAN)make docker-build$(RESET_STYLES) : Build docker image for pyflask-microservice"
+	@echo "$(BOLD_CYAN)make docker-run$(RESET_STYLES) : Run docker image for pyflask-microservice"
 	@echo "$(BOLD_CYAN)make clean$(RESET_STYLES) : Clean pyflask-microservice"
 	@echo "$(BOLD_CYAN)make wipe$(RESET_STYLES) : Wipe pyflask-microservice"
 	@echo "$(BOLD_CYAN)make clean-n-wipe$(RESET_STYLES) : Clean and wipe pyflask-microservice"

@@ -35,13 +35,6 @@ function main() {
   eval $(get_python3_version)
   printf "\n"
 
-  # shellcheck disable=SC2154
-  if [ "$pyflask_pref_is_personalized" == "false" ]; then
-    echo "$style_bold_blue""Starting project personalization . . .""$style_reset"
-    # TODO: start personalization
-    printf "\n"
-  fi
-
   # check python3 and pip3 versions
   check_python3_dep_versions
   printf "\n"
@@ -52,6 +45,13 @@ function main() {
   echo "$style_bold_cyan""Selected environment manager :$style_reset $pyflask_pref_python_env_manager"
 
   . "$SCRIPT_DIR"/check_env_manager.sh
+
+  # shellcheck disable=SC2154
+  if [ "$pyflask_pref_is_personalized" == "false" ]; then
+    echo "$style_bold_blue""Starting project personalization . . .""$style_reset"
+    python3 scripts/dev/personalize.py
+    printf "\n"
+  fi
 
   if [ "$pyflask_pref_python_env_manager" == "conda" ]; then
     recreate_conda_env
