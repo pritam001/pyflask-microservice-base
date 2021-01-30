@@ -40,9 +40,7 @@ This is a template project hosted on GitHub which can be used to create new repo
 1. Create a new repository named "my-pyflask-project" using this template repository *+
 1. `git clone https://www.github.com/username/my-pyflask-project.git`
 1. `cd my-pyflask-project`
-1. Create and activate conda environment 
-   `conda init my-conda-venv`
-   `conda activate my-conda-venv` *^
+1. `make init` : Initialize and personalize project
 1. `make setup` : Use pip-tools, pip-compile, pip install to setup python packages
 
 *+ [GitHub Guide: Creating a repository from a template](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template)
@@ -93,14 +91,16 @@ Contributing
 1. Commit your changes
 1. Create pull request to `upstream/development` branch
 
-TODO
+Roadmap
 -----------------------------------------------------------------------------
 - [x] Swagger support
-- [ ] Update linting documentation
 - [x] Introduction of testing tools
-- [ ] Testing tools documentation
 - [x] Code coverage
 - [x] Version handling by tbump
-- [x] Docker support
+- [ ] Personalization script
+- [ ] Docker support
+- [ ] uwsgi server
 - [ ] Add CoC, Contribution guidelines, PR and issue templates
+- [ ] Update linting documentation
+- [ ] Testing tools documentation
 

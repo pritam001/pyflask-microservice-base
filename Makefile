@@ -62,11 +62,11 @@ init: #: Initialize and personalize python environment
 
 setup: #: Use pip-tools, pip-compile, pip install
 	@echo "\n$(BOLD_BLUE)Setting up pyflask-microservice$(RESET_STYLES)"
+	@echo "\n$(BOLD_CYAN)Activating python environment . . .$(RESET_STYLES)"
+	sh scripts/dev/activate_python_env.sh
 	@echo "\n$(BOLD_CYAN)Checking dependencies . . .$(RESET_STYLES)"
 	sh scripts/dev/check_env_manager.sh
 	sh scripts/dev/check_python_version.sh
-	@echo "\n$(BOLD_CYAN)Activating python environment . . .$(RESET_STYLES)"
-	sh scripts/dev/activate_python_env.sh
 	@echo "\n$(BOLD_CYAN)Installing pip-tools . . .$(RESET_STYLES)"
 	pip3 install pip-tools
 	@echo "\n$(BOLD_CYAN)Generating requirements$(RESET_STYLES)"
@@ -115,8 +115,8 @@ lint: #: Run static analysis with flake8, radon, mypy and bandit
 
 
 format-n-lint: #: Format and lint
-	make format
-	make lint
+	make --no-print-directory format
+	make --no-print-directory lint
 	@echo "\n"
 
 
@@ -129,11 +129,11 @@ test-n-cover: #: Test with pytest, Code coverage with pytest-cov plugin
 
 pre-commit: #: Run pre-commit checks : format, lint, test, cover
 	@echo "\n$(BOLD_BLUE)Starting pre-commit jobs . . .$(RESET_STYLES)"
-	make format-n-lint
+	make --no-print-directory format-n-lint
 	@echo "\n$(BOLD_CYAN)Running pre-commit hooks$(RESET_STYLES) 🏁️️️"
 	pre-commit run --all-files
 	@echo "\n$(BOLD_GREEN)All checks passed$(RESET_STYLES) 🏳️️️️"
-	make test-n-cover
+	make --no-print-directory test-n-cover
 	@echo "\n$(BOLD_GREEN)Pre-commit jobs completed$(RESET_STYLES) 👍"
 
 
@@ -161,6 +161,6 @@ wipe: #: Wipe python environment
 
 clean-n-wipe: #: Clean project and wipe environment
 	@echo "\n$(BOLD_BLUE)Cleaning up project and wiping environment$(RESET_STYLES)"
-	make clean
-	make wipe
+	make --no-print-directory clean
+	make --no-print-directory wipe
 

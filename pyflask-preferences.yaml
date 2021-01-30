@@ -6,8 +6,8 @@ service_name: pyflask-microservice
 python_env_name: pyflask-base-env
 # env_manager: name of the environment manager used in the project
 # supported environment managers: venv | conda
-python_env_manager: conda
+python_env_manager: venv
 # python_base_version: python base version for the project
-# supported python versions: 3.8 | 3.9
+# supported python versions: 3.7 | 3.8
 python_base_version_major: 3
 python_base_version_minor: 8

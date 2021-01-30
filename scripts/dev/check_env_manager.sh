@@ -9,8 +9,10 @@ SCRIPT_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
 function validate_env_manager_availability() {
   # shellcheck disable=SC2154
   if [ "$pyflask_pref_python_env_manager" == "conda" ]; then
+    echo "$style_bold_cyan""Validating conda installation""$style_reset"
     validate_conda_installation
   elif [ "$pyflask_pref_python_env_manager" == "venv" ]; then
+    echo "$style_bold_cyan""Validating venv installation""$style_reset"
     validate_venv_installation
   else
     echo "$style_bold_red""Error : Unknown environment manager mentioned in pyflask-preferences.yaml""$style_reset"
