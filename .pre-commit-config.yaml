@@ -1,16 +1,17 @@
 # See https://pre-commit.com for more information
 # See https://pre-commit.com/hooks.html for more hooks
 repos:
-  - repo: https://github.com/ambv/black
-    rev: stable
+  - repo: https://github.com/psf/black
+    rev: 20.8b1
     hooks:
       - id: black
+        # pyflask_config: python_version
         language_version: python3.8
   - repo: https://gitlab.com/pycqa/flake8
-    rev: 3.8.3
+    rev: 3.8.4
     hooks:
       - id: flake8
   - repo: https://github.com/pre-commit/mirrors-isort
-    rev: v5.3.2
+    rev: v5.7.0
     hooks:
       - id: isort

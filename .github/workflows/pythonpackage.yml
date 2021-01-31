@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: [3.8]
+        python-version: [3.7, 3.8]
 
     steps:
     - uses: actions/checkout@v2
@@ -19,9 +19,10 @@ jobs:
     - name: Install pip
       run: |
         python -m pip install --upgrade pip
-    - name: Setup project
+    - name: Install dependencies
       run: |
-        make setup
+        pip3 install pip-tools
+        pip-sync requirements/requirements.txt requirements/dev-requirements.txt
     - name: Lint
       run: |
         pip install flake8

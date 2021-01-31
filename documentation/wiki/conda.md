@@ -16,13 +16,15 @@ https://www.shellhacks.com/python-install-pip-mac-ubuntu-centos/
 `conda init zsh`
 
 ##### Create conda virtual env
-`conda create -n pyflask-base python=3.8`
+
+[//]: <> ( # pyflask_config: python_version )
+`conda create -n pyflask-base-env python=3.8`
 
 ```
 #
 # To activate this environment, use
 #
-#     $ conda activate pyflask-base
+#     $ conda activate pyflask-base-env
 #
 # To deactivate an active environment, use
 #
@@ -30,6 +32,6 @@ https://www.shellhacks.com/python-install-pip-mac-ubuntu-centos/
 ```
 
 ##### Run conda virtual env
-`conda activate pyflask-base`
+`conda activate pyflask-base-env`
 
 

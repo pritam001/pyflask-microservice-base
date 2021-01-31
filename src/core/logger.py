@@ -5,8 +5,7 @@ import os
 import sys
 from logging.handlers import TimedRotatingFileHandler
 
-from dynaconf import settings
-
+from src.config.dynaconf import settings
 from src.core.singleton import Singleton
 
 FORMATTER = logging.Formatter("%(asctime)s  %(levelname)s  %(message)s")

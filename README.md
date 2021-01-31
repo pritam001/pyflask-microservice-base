@@ -1,3 +1,4 @@
+[//]: <> (pyflask_config: service_name)
 pyflask-microservice-base
 ------------------------------------------------------------------------------
 An "optionally opinionated and structured" flask boilerplate microservice for jump-starting development
@@ -17,7 +18,8 @@ Project status
 
 Tools
 ------------------------------------------------------------------------------
-[![Min Python Version 3.8+](https://img.shields.io/badge/python-3.8+-3776AB.svg?style=flat)](https://www.python.org/download/releases/3.8.0/)
+[![Min Python Version 3.7](https://img.shields.io/badge/python-3.7+-3776AB.svg?style=flat)](https://www.python.org/download/releases/3.8.0/)
+[![Min GNU Make Version 4.3](https://img.shields.io/badge/make-4.3+-222222.svg?style=flat)](https://www.gnu.org/software/make/manual/make.html)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg?style=flat)](https://github.com/psf/black)
 [![Static Analysis: flake8](https://img.shields.io/badge/static%20analysis-flake8-cccccc.svg?style=flat)](https://github.com/PyCQA/flake8/)
 [![Cyclomatic Complexity: radon](https://img.shields.io/badge/cyclomatic%20complexity-radon-ff5252.svg?style=flat)](https://github.com/rubik/radon)
@@ -40,10 +42,11 @@ This is a template project hosted on GitHub which can be used to create new repo
 1. Create a new repository named "my-pyflask-project" using this template repository *+
 1. `git clone https://www.github.com/username/my-pyflask-project.git`
 1. `cd my-pyflask-project`
-1. Create and activate conda environment 
-   `conda init my-conda-venv`
-   `conda activate my-conda-venv` *^
-1. `make setup` : Use pip-tools, pip-compile, pip install to setup python packages
+1. `make init` : Initialize and personalize project
+1. `make setup` : Use pip-tools, pip-compile, pip install to set up python packages
+1. `make upgrade` : Upgrade dependencies to latest version
+1. `make pre-commit` : Run format, lint, test and cover
+1. Run `git add .` and `git commit -m "Personalize service"`
 
 *+ [GitHub Guide: Creating a repository from a template](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template)
 <br>
@@ -71,44 +74,35 @@ Type `make pre-commit` before committing your changes to run formatters, linters
 
 
 ### Documentation
-Flasgger docs can be found at http://0.0.0.0:8420/api/v1/pyflask-service/swagger
+[//]: <> (pyflask_config: service_name)
+Flasgger docs can be found at http://0.0.0.0:8420/api/v1/pyflask-microservice/swagger
 
-API specs can be found at http://0.0.0.0:8420/api/v1/pyflask-service/swagger_spec
+[//]: <> (pyflask_config: service_name)
+API specs can be found at http://0.0.0.0:8420/api/v1/pyflask-microservice/swagger_spec
 
 Flasgger UI version: v2 | OpenAPI version: 2
 
 <p align="center"><img src="documentation/assets/flasgger_intro.png" /></p>
 
 
-Development Setup
-------------------------------------------------------------------------------
-To be updated
-
-
 Contributing
 ------------------------------------------------------------------------------
 1. Stargaze this repository
 1. Fork this repository
+1. Add this project as `upstream`
 1. Commit your changes
-1. Create pull request to `development` branch
+1. Create pull request to `upstream/development` branch
 
-[![](https://sourcerer.io/fame/pritam001/pritam001/pyflask-microservice-base/images/0)](https://sourcerer.io/fame/pritam001/pritam001/pyflask-microservice-base/links/0)
-[![](https://sourcerer.io/fame/pritam001/pritam001/pyflask-microservice-base/images/1)](https://sourcerer.io/fame/pritam001/pritam001/pyflask-microservice-base/links/1)
-[![](https://sourcerer.io/fame/pritam001/pritam001/pyflask-microservice-base/images/2)](https://sourcerer.io/fame/pritam001/pritam001/pyflask-microservice-base/links/2)
-[![](https://sourcerer.io/fame/pritam001/pritam001/pyflask-microservice-base/images/3)](https://sourcerer.io/fame/pritam001/pritam001/pyflask-microservice-base/links/3)
-[![](https://sourcerer.io/fame/pritam001/pritam001/pyflask-microservice-base/images/4)](https://sourcerer.io/fame/pritam001/pritam001/pyflask-microservice-base/links/4)
-[![](https://sourcerer.io/fame/pritam001/pritam001/pyflask-microservice-base/images/5)](https://sourcerer.io/fame/pritam001/pritam001/pyflask-microservice-base/links/5)
-[![](https://sourcerer.io/fame/pritam001/pritam001/pyflask-microservice-base/images/6)](https://sourcerer.io/fame/pritam001/pritam001/pyflask-microservice-base/links/6)
-[![](https://sourcerer.io/fame/pritam001/pritam001/pyflask-microservice-base/images/7)](https://sourcerer.io/fame/pritam001/pritam001/pyflask-microservice-base/links/7)
-
-
-TODO
+Roadmap
 -----------------------------------------------------------------------------
 - [x] Swagger support
-- [ ] Update linting documentation
 - [x] Introduction of testing tools
-- [ ] Testing tools documentation
 - [x] Code coverage
-- [ ] Version handling by tbump
+- [x] Version handling by tbump
+- [ ] Personalization script
+- [ ] Docker support
+- [ ] uwsgi server
 - [ ] Add CoC, Contribution guidelines, PR and issue templates
+- [ ] Update linting documentation
+- [ ] Testing tools documentation
 
