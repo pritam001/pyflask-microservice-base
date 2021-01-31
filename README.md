@@ -11,7 +11,7 @@ An "optionally opinionated and structured" flask boilerplate microservice for ju
 
 Project status
 ------------------------------------------------------------------------------
-![WIP](https://img.shields.io/badge/%20%F0%9F%9A%A7%20-Dev%20in%20progress-important)
+![Version](https://img.shields.io/github/v/tag/pritam001/pyflask-microservice-base?logo=codesandbox)
 [![Maintainability](https://api.codeclimate.com/v1/badges/cc34f11b1a2b9bb8e216/maintainability)](https://codeclimate.com/github/pritam001/pyflask-microservice-base/maintainability)
 [![codecov](https://codecov.io/gh/pritam001/pyflask-microservice-base/branch/master/graph/badge.svg)](https://codecov.io/gh/pritam001/pyflask-microservice-base)
 
