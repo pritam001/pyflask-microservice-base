@@ -5,6 +5,7 @@ APPLICATION_NAME=pyflask-microservice
 
 APP_DIR=src
 TEST_DIR=test
+SCRIPTS_DIR=scripts
 HOME_DIR_PY_FILES=*.py
 
 # echo _FormatCode_ guide:
@@ -97,21 +98,21 @@ upgrade: #: upgrade requirements to latest versions
 format: #: Format and fix python code with black, isort, autoflake
 	@echo "\n$(BOLD_BLUE)Blackifying$(RESET_STYLES) 🍳"
 	black --version
-	black $(APP_DIR) $(TEST_DIR) $(HOME_DIR_PY_FILES)
+	black $(APP_DIR) $(TEST_DIR) $(HOME_DIR_PY_FILES) $(SCRIPTS_DIR)
 	@echo "\n$(BOLD_CYAN)ISorting$(RESET_STYLES) 〽️️"
-	isort $(APP_DIR) $(TEST_DIR) $(HOME_DIR_PY_FILES)
+	isort $(APP_DIR) $(TEST_DIR) $(HOME_DIR_PY_FILES) $(SCRIPTS_DIR)
 	@echo "\n$(BOLD_CYAN)Flaking$(RESET_STYLES) ❄️"
 	flake8 --version
-	autoflake --remove-all-unused-imports --remove-unused-variables --remove-duplicate-keys --ignore-init-module-imports -i -r $(APP_DIR) $(TEST_DIR) $(HOME_DIR_PY_FILES)
+	autoflake --remove-all-unused-imports --remove-unused-variables --remove-duplicate-keys --ignore-init-module-imports -i -r $(APP_DIR) $(TEST_DIR) $(HOME_DIR_PY_FILES) $(SCRIPTS_DIR)
 
 
 lint: #: Run static analysis with flake8, radon, mypy and bandit
 	@echo "\n$(BOLD_CYAN)Linting with flake8$(RESET_STYLES) ❄️"
 	flake8 --version
-	flake8 $(APP_DIR) $(TEST_DIR) $(HOME_DIR_PY_FILES)
+	flake8 $(APP_DIR) $(TEST_DIR) $(HOME_DIR_PY_FILES) $(SCRIPTS_DIR)
 	@echo "\n$(BOLD_CYAN)Checking cyclomatic complexity with radon$(RESET_STYLES) 💫️"
 	radon --version
-	radon cc $(APP_DIR) $(TEST_DIR) $(HOME_DIR_PY_FILES) --total-average -nc
+	radon cc $(APP_DIR) $(TEST_DIR) $(HOME_DIR_PY_FILES) $(SCRIPTS_DIR) --total-average -nc
 	@echo "\n$(BOLD_CYAN)Static typing with mypy$(RESET_STYLES) ⌨️"
 	mypy --version
 	mypy $(APP_DIR) $(HOME_DIR_PY_FILES)

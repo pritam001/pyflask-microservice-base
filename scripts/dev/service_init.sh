@@ -51,6 +51,7 @@ function main() {
     echo "$style_bold_blue""Starting project personalization . . .""$style_reset"
     rm -rf .github
     pip3 install pyyaml
+    pip3 install inquirer
     python3 scripts/dev/personalize.py "$pyflask_pref_python_env_name"
     printf "\n"
   fi

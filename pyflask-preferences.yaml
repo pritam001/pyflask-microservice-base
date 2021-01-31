@@ -1,5 +1,5 @@
 docker_maintainer_details: User <user@gmail.com>
-is_personalized: false
+is_personalized: true
 python_base_version_major: 3
 python_base_version_minor: 8
 python_env_manager: venv
