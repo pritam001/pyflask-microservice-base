@@ -44,6 +44,9 @@ This is a template project hosted on GitHub which can be used to create new repo
 1. `cd my-pyflask-project`
 1. `make init` : Initialize and personalize project
 1. `make setup` : Use pip-tools, pip-compile, pip install to set up python packages
+1. `make upgrade` : Upgrade dependencies to latest version
+1. `make pre-commit` : Run format, lint, test and cover
+1. Run `git add .` and `git commit -m "Personalize service"`
 
 *+ [GitHub Guide: Creating a repository from a template](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template)
 <br>

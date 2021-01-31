@@ -18,9 +18,7 @@ if __name__ == "__main__":
             matches.append(os.path.join(root, filename))
 
     with open(r"./pyflask-preferences.yaml") as file:
-        # The FullLoader parameter handles the conversion from YAML
-        # scalar values to Python the dictionary format
-        pyflask_pref_dict = yaml.load(file, Loader=yaml.FullLoader)
+        pyflask_pref_dict = yaml.safe_load(file)
 
     new_service_name = input(f"Enter service name: (current_name = {pyflask_pref_dict['service_name']}) :: ")
     pyflask_pref_dict["service_name"] = new_service_name if new_service_name != "" else pyflask_pref_dict["service_name"]
@@ -51,7 +49,7 @@ if __name__ == "__main__":
         documents = yaml.dump(pyflask_pref_dict, file)
 
     for f in matches:
-        with open(f) as open_f:
+        with open(f, "r") as open_f:
             for num, line in enumerate(open_f, 1):
                 if "pyflask_config" in line:
-                    print(line)
+                    print(f"File {f} : Change in line {num+1} : line {line}")

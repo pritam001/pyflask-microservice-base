@@ -1,6 +1,5 @@
-from dynaconf import settings
-
 from src.app import app
+from src.config.dynaconf import settings
 from src.core import Logger
 
 log: Logger = Logger()

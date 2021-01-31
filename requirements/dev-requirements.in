@@ -43,3 +43,7 @@ pytest-cov
 
 # bump software releases
 tbump
+
+# used in preference script
+inquirer
+pyyaml
