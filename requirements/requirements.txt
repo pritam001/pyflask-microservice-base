@@ -5,24 +5,24 @@
 #    pip-compile --output-file=requirements/requirements.txt requirements/requirements.in
 #
 apispec==4.0.0
-    # via -r requirements/requirements.in
+    # via -r requirements.in
 attrs==19.3.0
     # via
-    #   -r requirements/requirements.in
+    #   -r requirements.in
     #   jsonschema
 click==7.1.2
     # via flask
 dynaconf==3.1.2
-    # via -r requirements/requirements.in
+    # via -r requirements.in
 flasgger==0.9.5
-    # via -r requirements/requirements.in
-flask-cors==3.0.10
-    # via -r requirements/requirements.in
+    # via -r requirements.in
 flask==1.1.2
     # via
-    #   -r requirements/requirements.in
+    #   -r requirements.in
     #   flasgger
     #   flask-cors
+flask-cors==3.0.10
+    # via -r requirements.in
 itsdangerous==1.1.0
     # via flask
 jinja2==2.11.2
@@ -32,13 +32,13 @@ jsonschema==3.2.0
 markupsafe==1.1.1
     # via jinja2
 marshmallow==3.10.0
-    # via -r requirements/requirements.in
-mistune==0.8.4
+    # via -r requirements.in
+mistune==2.0.3
     # via flasgger
 pyrsistent==0.17.3
     # via jsonschema
 python-dotenv==0.15.0
-    # via -r requirements/requirements.in
+    # via -r requirements.in
 pyyaml==5.4.1
     # via flasgger
 six==1.15.0
